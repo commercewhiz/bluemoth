@@ -82,6 +82,7 @@
           "type": "stack_image",
           "settings": {
             "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Image.png",
             "heading": "<p>Tinnitus relief<\/p>",
             "subheading": "Although we are loud and proud sound advocates, we also appreciate the need for blissful quiet.",
             "button_1_text": "Learn More",
