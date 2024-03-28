@@ -68,6 +68,7 @@
           "type": "stack_image",
           "settings": {
             "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Mask_group.png",
             "heading": "<p>Hearing loss<\/p>",
             "subheading": "We get it. “Prescription hearing tech” might feel like a big, scary thing. But we want to make it a no-brainer.",
             "button_1_text": "Learn More",
