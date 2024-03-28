@@ -7,8 +7,7 @@
         "animation_type": "top",
         "type": "primary",
         "color": "#ffffff",
-        "image": "shopify:\/\/shop_images\/hero-desktop.png",
-        "mobile_image": "shopify:\/\/shop_images\/hero-mobile.png",
+        "image": "shopify:\/\/shop_images\/Mask_group.png",
         "heading": "<p>Hear life,<\/p><p>       <em><strong>full frequency.<\/strong><\/em><\/p>",
         "subheading": "We save you time and money, by bringing the best in premium prescription hearing technology and virtual telehealth support, directly to you.",
         "button_1_text": "Shop Now",
@@ -53,8 +52,6 @@
         "color": "",
         "background_color": "",
         "top_color": "#ffffff",
-        "top_image": "shopify:\/\/shop_images\/3-step-desktop.png",
-        "top_mobile_image": "shopify:\/\/shop_images\/3-step-mobile.png",
         "heading": "<p>3 simple steps to <em><strong>better hearing<\/strong><\/em>.<\/p>",
         "subheading": "We are the only place that allows you to try three sets of premium hearing aids without having to leave your home.",
         "bottom_heading": "<p>How <em><strong>BlueMoth<\/strong><\/em> Works<\/p>",
@@ -70,7 +67,6 @@
           "type": "stack_image",
           "settings": {
             "add_border_round": true,
-            "image": "shopify:\/\/shop_images\/hear-better-1.png",
             "heading": "<p>Hearing loss<\/p>",
             "subheading": "We get it. “Prescription hearing tech” might feel like a big, scary thing. But we want to make it a no-brainer.",
             "button_1_text": "Learn More",
@@ -84,7 +80,6 @@
           "type": "stack_image",
           "settings": {
             "add_border_round": true,
-            "image": "shopify:\/\/shop_images\/hear-better-2.png",
             "heading": "<p>Tinnitus relief<\/p>",
             "subheading": "Although we are loud and proud sound advocates, we also appreciate the need for blissful quiet.",
             "button_1_text": "Learn More",
@@ -176,8 +171,7 @@
         "9665d160-47d9-49a6-b5f5-df1337b3f316": {
           "type": "image",
           "settings": {
-            "add_border_round": true,
-            "image": "shopify:\/\/shop_images\/meet-team.png"
+            "add_border_round": true
           }
         }
       },
@@ -190,7 +184,13 @@
         "color": "",
         "background_color": "",
         "add_top_space": true,
+        "top_space_mobile": 40,
+        "top_space_tablet": 80,
+        "top_space_desktop": 80,
         "add_bottom_space": true,
+        "bottom_space_mobile": 40,
+        "bottom_space_tablet": 40,
+        "bottom_space_desktop": 95,
         "enable_animation": true,
         "enable_stack_on_mobile": false,
         "gap_space_mobile": 40,
@@ -298,7 +298,6 @@
           "settings": {
             "width_mobile": 105,
             "width_desktop": 130,
-            "image": "shopify:\/\/shop_images\/forbes.png",
             "link": "https:\/\/www.forbes.com"
           }
         },
@@ -307,7 +306,6 @@
           "settings": {
             "width_mobile": 60,
             "width_desktop": 75,
-            "image": "shopify:\/\/shop_images\/clnet.png",
             "link": "https:\/\/www.cnet.com\/"
           }
         },
@@ -316,7 +314,6 @@
           "settings": {
             "width_mobile": 120,
             "width_desktop": 150,
-            "image": "shopify:\/\/shop_images\/yahoo.png",
             "link": "https:\/\/www.yahoo.com"
           }
         }
@@ -342,8 +339,6 @@
         "animation_type": "bottom",
         "type": "secondary",
         "color": "#ffffff",
-        "image": "shopify:\/\/shop_images\/bottom-hero-desktop.png",
-        "mobile_image": "shopify:\/\/shop_images\/bottom-hero-mobile.png",
         "heading": "<p>Have <em><strong>questions?<\/strong><\/em><br\/>            We hear you.<\/p>",
         "subheading": "Schedule a free 15-minute consultation with one of our hearing specialists to discuss your needs and talk through recommendations.",
         "button_1_text": "Book Your FREE Consulation",
