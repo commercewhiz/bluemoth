@@ -1,0 +1,92 @@
+{%- liquid
+  echo 'section-faq-hero.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="faq-hero section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="container">
+    <div class="faq-hero__inner">
+      <div class="faq-hero__head center">
+        <h1 class="h2 faq-hero__title">
+          {{- mod_section.title -}}
+        </h1>
+        <div class="faq-hero__description mxa">
+          {{ mod_section.description | newline_to_br }}
+        </div>
+      </div>
+      <div class="faq-hero__buttons flex fdc aic jcc fw">
+        {%- for block in section.blocks -%}
+          {%- assign mod_block = block.settings -%}
+          <a
+            href="{{ mod_block.url }}"
+            class="button button--secondary link-with-icon faq-hero__button w1 center"
+          >
+            <span class="text">{{- mod_block.title -}}</span>
+            {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.faq-hero.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.faq-hero.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.faq-hero.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.faq-hero.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.faq-hero.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:sections.faq-hero.settings.title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "t:sections.faq-hero.settings.description.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "t:sections.faq-hero.blocks.button.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.faq-hero.blocks.button.settings.title.label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "t:sections.faq-hero.blocks.button.settings.url.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

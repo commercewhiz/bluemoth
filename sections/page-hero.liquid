@@ -1,0 +1,169 @@
+{%- liquid
+  echo 'section-page-hero.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+
+  assign desktop_image_class = ''
+  if mod_section.mobile_image != blank
+    assign desktop_image_class = 'small-hide'
+  endif
+-%}
+
+<div
+  class="page-hero section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-overlay-color: {{ mod_section.overlay_color }};
+    --section-overlay-opacity: {{ mod_section.overlay_opacity }};
+  "
+>
+  <div class="page-hero__inner relative">
+    <div class="page-hero__image">
+      {%- if mod_section.mobile_image != blank -%}
+        {%- render 'image',
+          image: mod_section.mobile_image,
+          sizes: '100vw',
+          container: true,
+          disable_lazy: true,
+          container_class: 'medium-hide large-up-hide'
+        -%}
+      {%- endif -%}
+
+      {%- if mod_section.image != blank -%}
+        {%- render 'image',
+          image: mod_section.image,
+          sizes: '100vw',
+          container: true,
+          disable_lazy: true,
+          container_class: desktop_image_class
+        -%}
+      {%- endif -%}
+    </div>
+
+    {%- if mod_section.enable_overlay -%}
+      <div class="page-hero__overlay fill">&nbsp;</div>
+    {%- endif -%}
+
+    <div class="page-hero__content fill">
+      <div class="container full-height">
+        <div class="page-hero__content__wrapper full-height flex aic jcc">
+          <div class="page-hero__content__inner">
+            {%- if mod_section.heading != blank -%}
+              <h2 class="page-hero__title text-pre
+                {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                  scroll-trigger animate--slide-in
+                {% endif %}
+              ">
+                {{- mod_section.heading | newline_to_br -}}
+              </h2>
+            {%- endif -%}
+            {%- if mod_section.subheading != blank -%}
+              <div class="page-hero__subtitle utility2 text-light
+                {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                  scroll-trigger animate--slide-in
+                {% endif %}
+              ">
+                {{- mod_section.subheading -}}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page-hero.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.page-hero.settings.header__style.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.page-hero.settings.enable_animation.label",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.page-hero.settings.color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.page-hero.settings.header__image.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.page-hero.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.page-hero.settings.mobile_image.label",
+      "info": "t:sections.page-hero.settings.mobile_image.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.page-hero.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:sections.page-hero.settings.heading.label"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "t:sections.page-hero.settings.subheading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.page-hero.settings.header__overlay.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "t:sections.page-hero.settings.enable_overlay.label",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:sections.page-hero.settings.overlay_color.label",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:sections.page-hero.settings.overlay_opacity.label",
+      "info": "t:sections.page-hero.settings.overlay_opacity.info",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default":0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.page-hero.presets.name",
+      "settings": {
+        "enable_animation": true,
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/About-Hero-Desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/About-Hero-Mobile.png",
+        "heading": "<p>About BlueMoth<\/p>",
+        "subheading": "We believe everyone deserves better hearing.",
+        "enable_overlay": false,
+        "overlay_color": "#000000",
+        "overlay_opacity": 75
+      }
+    }
+  ]
+}
+{% endschema %}

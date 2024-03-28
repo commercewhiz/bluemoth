@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "image_with_text_eVELM9": {
+      "type": "image-with-text",
+      "blocks": {
+        "content_QtiFxJ": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>Tinnitus relief<br\/>            <em><strong>starts right here<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "View All Products",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "primary",
+            "button_2_text": "",
+            "button_2_link": "#"
+          }
+        },
+        "image_PcXLRP": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Approach.png"
+          }
+        }
+      },
+      "block_order": [
+        "content_QtiFxJ",
+        "image_PcXLRP"
+      ],
+      "settings": {
+        "title": "",
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": true,
+        "top_space_mobile": 115,
+        "top_space_tablet": 150,
+        "top_space_desktop": 155,
+        "add_bottom_space": true,
+        "bottom_space_mobile": 40,
+        "bottom_space_tablet": 55,
+        "bottom_space_desktop": 75,
+        "enable_animation": true,
+        "enable_stack_on_mobile": true,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    }
+  },
+  "order": [
+    "image_with_text_eVELM9"
+  ]
+}

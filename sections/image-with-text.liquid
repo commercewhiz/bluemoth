@@ -1,0 +1,579 @@
+{%- liquid
+  echo 'section-image-with-text.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+  assign image_index = 0
+  assign content_index = 0
+-%}
+
+{%- capture section_content -%}
+  {%- for block in section.blocks -%}
+    {%- assign mod_block = block.settings -%}
+    <div
+      class="image-with-text__column
+        {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+          scroll-trigger animate--slide-in
+        {% endif %}
+      "
+      {{ block.shopify_attributes }}
+    >
+      {%- case block.type -%}
+        {%- when 'title' -%}
+          <h2 class="iwt-title text-pre">{{ mod_block.title }}</h2>
+        {%- when 'stack_image' -%}
+          <div class="iwt-stack">
+            <div class="iwt-stack__image">
+              {%- liquid
+                assign container_class = ''
+                if mod_block.add_border_round
+                  assign container_class = 'img--rounded'
+                endif
+              -%}
+              {%- if mod_block.image != blank -%}
+                {%- render 'image',
+                  image: mod_block.image,
+                  sizes: '100vw',
+                  container: true,
+                  container_class: container_class
+                -%}
+              {%- endif -%}
+            </div>
+
+            {%- if mod_block.heading != blank -%}
+              <h3 class="iwt-stack__title">
+                {{- mod_block.heading -}}
+              </h3>
+            {%- endif -%}
+
+            {%- if mod_block.subheading != blank -%}
+              <div class="iwt-stack__subtitle">
+                {{- mod_block.subheading -}}
+              </div>
+            {%- endif -%}
+
+            <div class="iwt-stack__actions flex aic">
+              {%- if mod_block.button_1_link != blank and mod_block.button_1_text != blank -%}
+                <a
+                  href="{{ mod_block.button_1_link }}"
+                  class="iwt-stack__link link-with-icon button button--{{ mod_block.button_1_type }}"
+                >
+                  <span class="text">{{- mod_block.button_1_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+
+              {%- if mod_block.button_2_link != blank and mod_block.button_2_text != blank -%}
+                <a
+                  href="{{ mod_block.button_2_link }}"
+                  class="iwt-stack__link link-with-icon button button--tertiary"
+                >
+                  <span class="text">{{- mod_block.button_2_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+
+        {%- when 'image' -%}
+          {%- assign image_index = forloop.index -%}
+          <div class="iwt-image">
+            {%- if mod_block.image != blank -%}
+              {%- liquid
+                assign container_class = ''
+                if mod_block.add_border_round
+                  assign container_class = 'img--rounded'
+                endif
+              -%}
+              {%- render 'image',
+                image: mod_block.image,
+                sizes: '100vw',
+                container: true,
+                container_class: container_class
+              -%}
+            {%- endif -%}
+          </div>
+        {%- when 'content' -%}
+          {%- assign content_index = forloop.index -%}
+          <div class="iwt-content full-height flex fdc jcc">
+            {%- if mod_block.heading != blank -%}
+              <h3 class="iwt-content__title text-pre">
+                {{- mod_block.heading -}}
+              </h3>
+            {%- endif -%}
+
+            {%- if mod_block.subheading != blank -%}
+              <div class="iwt-content__subtitle">
+                {{- mod_block.subheading -}}
+              </div>
+            {%- endif -%}
+
+            <div class="iwt-content__actions flex aic">
+              {%- if mod_block.button_1_link != blank and mod_block.button_1_text != blank -%}
+                <a
+                  href="{{ mod_block.button_1_link }}"
+                  class="iwt-content__link link-with-icon button button--{{ mod_block.button_1_type }}"
+                >
+                  <span class="text">{{- mod_block.button_1_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+
+              {%- if mod_block.button_2_link != blank and mod_block.button_2_text != blank -%}
+                <a
+                  href="{{ mod_block.button_2_link }}"
+                  class="iwt-content__link link-with-icon button button--tertiary"
+                >
+                  <span class="text">{{- mod_block.button_2_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- when 'checklist' -%}
+          {%- assign content_index = forloop.index -%}
+          <div class="iwt-checklist full-height flex fdc jcc">
+            {%- if mod_block.heading != blank -%}
+              <h3 class="iwt-checklist__title text-pre">
+                {{- mod_block.heading -}}
+              </h3>
+            {%- endif -%}
+
+            {%- if mod_block.content != blank -%}
+              {%- assign checklist_options = mod_block.content | newline_to_br | split: '<br />' | join: '|' | strip_newlines | split: '|' -%}
+              <div class="iwt-checklist__content utility2">
+                {%- for option in checklist_options -%}
+                  <div class="iwt-checklist__option flex ais jcb">
+                    <div class="iwt-checklist__option-icon c-lemon">
+                      {%- render 'icon-check-rounded', class: 'block w1 ha' -%}
+                    </div>
+
+                    <div class="iwt-checklist__option-text w1">
+                      {{ option }}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+
+      {%- endcase -%}
+    </div>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div
+  class="image-with-text
+    section-inner
+    {% if mod_section.add_top_space %}
+      image-with-text--has-top
+    {% endif %}
+    {% if mod_section.add_bottom_space %}
+      image-with-text--has-bottom
+    {% endif %}
+
+    {% if mod_section.enable_stack_on_mobile and image_index == 2 and content_index == 1 %}
+      image-with-text--reverse-mobile
+    {% endif %}
+
+    {% if image_index == 1 and content_index == 2 %}
+      image-with-text--has-space-desktop
+    {% endif %}
+  "
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+    --section-gap-mobile: {{ mod_section.gap_space_mobile }}px;
+    --section-gap-desktop: {{ mod_section.gap_space_desktop }}px;
+    --section-top-space-mobile: {{ mod_section.top_space_mobile }}px;
+    --section-top-space-tablet: {{ mod_section.top_space_tablet }}px;
+    --section-top-space-desktop: {{ mod_section.top_space_desktop }}px;
+    --section-bottom-space-mobile: {{ mod_section.bottom_space_mobile }}px;
+    --section-bottom-space-tablet: {{ mod_section.bottom_space_tablet }}px;
+    --section-bottom-space-desktop: {{ mod_section.bottom_space_desktop }}px;
+  "
+>
+  <div class="container">
+    {%- if mod_section.title != blank -%}
+      <h2 class="image-with-text__title h3 center {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %} scroll-trigger animate--slide-in{% endif %}">
+        {{ mod_section.title }}
+      </h2>
+    {%- endif -%}
+    <div class="image-with-text__inner flex fdc">
+      {{ section_content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image-with-text.name",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:sections.image-with-text.settings.title.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.image-with-text.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.image-with-text.settings.background_color.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_top_space",
+      "label": "t:sections.image-with-text.settings.add_top_space.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "top_space_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 5,
+      "default": 40,
+      "unit": "px",
+      "label": "t:settings_schema.global.settings.top_space_mobile.label"
+    },
+    {
+      "type": "range",
+      "id": "top_space_tablet",
+      "min": 0,
+      "max": 160,
+      "step": 5,
+      "default": 80,
+      "unit": "px",
+      "label": "t:settings_schema.global.settings.top_space_tablet.label"
+    },
+    {
+      "type": "range",
+      "id": "top_space_desktop",
+      "min": 0,
+      "max": 160,
+      "step": 5,
+      "default": 80,
+      "unit": "px",
+      "label": "t:settings_schema.global.settings.top_space_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_bottom_space",
+      "label": "t:sections.image-with-text.settings.add_bottom_space.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 5,
+      "default": 40,
+      "unit": "px",
+      "label": "t:settings_schema.global.settings.bottom_space_mobile.label"
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_tablet",
+      "min": 0,
+      "max": 160,
+      "step": 5,
+      "default": 40,
+      "unit": "px",
+      "label": "t:settings_schema.global.settings.bottom_space_tablet.label"
+    },
+    {
+      "type": "range",
+      "id": "bottom_space_desktop",
+      "min": 0,
+      "max": 160,
+      "step": 5,
+      "default": 95,
+      "unit": "px",
+      "label": "t:settings_schema.global.settings.bottom_space_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.image-with-text.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_stack_on_mobile",
+      "label": "t:sections.image-with-text.settings.enable_stack_on_mobile.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "gap_space_mobile",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.image-with-text.settings.gap_space_mobile.label",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "gap_space_desktop",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.image-with-text.settings.gap_space_desktop.label",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "t:sections.image-with-text.blocks.title.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "t:sections.image-with-text.blocks.title.settings.title.label"
+        }
+      ]
+    },
+    {
+      "type": "stack_image",
+      "name": "t:sections.image-with-text.blocks.stack_image.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.stack_image.settings.header__style.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "add_border_round",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.add_border_round.label",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.stack_image.settings.header__image.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.image.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.stack_image.settings.header__content.content"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.heading.label"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.subheading.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.stack_image.settings.header__button_1.content"
+        },
+        {
+          "type": "text",
+          "id": "button_1_text",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.button_1_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_1_link",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.button_1_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_1_type",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.button_1_type.label",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.image-with-text.blocks.stack_image.settings.button_1_type.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.image-with-text.blocks.stack_image.settings.button_1_type.options__2.label"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.stack_image.settings.header__button_2.content"
+        },
+        {
+          "type": "text",
+          "id": "button_2_text",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.button_2_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_2_link",
+          "label": "t:sections.image-with-text.blocks.stack_image.settings.button_2_link.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:sections.image-with-text.blocks.image.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.image.settings.header__style.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "add_border_round",
+          "label": "t:sections.image-with-text.blocks.image.settings.add_border_round.label",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.image.settings.header__image.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-with-text.blocks.image.settings.image.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.image-with-text.blocks.content.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.content.settings.header__content.content"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "t:sections.image-with-text.blocks.content.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "t:sections.image-with-text.blocks.content.settings.subheading.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.content.settings.header__button_1.content"
+        },
+        {
+          "type": "text",
+          "id": "button_1_text",
+          "label": "t:sections.image-with-text.blocks.content.settings.button_1_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_1_link",
+          "label": "t:sections.image-with-text.blocks.content.settings.button_1_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_1_type",
+          "label": "t:sections.image-with-text.blocks.content.settings.button_1_type.label",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.image-with-text.blocks.content.settings.button_1_type.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.image-with-text.blocks.content.settings.button_1_type.options__2.label"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.content.settings.header__button_2.content"
+        },
+        {
+          "type": "text",
+          "id": "button_2_text",
+          "label": "t:sections.image-with-text.blocks.content.settings.button_2_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_2_link",
+          "label": "t:sections.image-with-text.blocks.content.settings.button_2_link.label"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "name": "t:sections.image-with-text.blocks.checklist.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.image-with-text.blocks.checklist.settings.header__content.content"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "t:sections.image-with-text.blocks.checklist.settings.heading.label"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "t:sections.image-with-text.blocks.checklist.settings.content.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "title": "",
+        "color": "",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": false,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      },
+      "blocks": [
+        {
+          "type": "content",
+          "settings": {
+            "heading": "<p>Meet our team of<\/p><p>            <em><strong>hearing professionals<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "Meet the Team",
+            "button_1_link": "shopify:\/\/collections\/frontpage",
+            "button_1_type": "secondary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/meet-team.png"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

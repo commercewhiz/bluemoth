@@ -1,0 +1,129 @@
+{% liquid
+  assign product_first_image = mod_product.featured_image
+  assign product_second_image = mod_product.images[1]
+
+  assign color_option = mod_product.options_with_values | where: 'name', 'Color' | first
+  assign has_color_option = false
+  assign color_option_key = ''
+  if color_option != null and color_option != empty
+    assign has_color_option = true
+    assign color_option_key = 'option' | append: color_option.position
+  endif
+-%}
+
+<product-card class="product-card block {{ class }}">
+  <a
+    href="{{ mod_product.url }}"
+    class="product-card__image relative overflow-hidden block js-images"
+  >
+    {%- if has_color_option -%}
+      {%- liquid
+        for value in color_option.values
+          assign handleized_value = value | handleize
+          assign attributes = 'data-variant-color="' | append: handleized_value | append: '"'
+
+          assign first_media_classes = 'js-product-image front'
+          assign second_media_classes = 'js-product-image back'
+          if forloop.first
+            assign first_media_classes = first_media_classes | append: ' active'
+            assign second_media_classes = second_media_classes | append: ' active'
+          endif
+
+          assign color_variant = mod_product.variants | where: color_option_key, value | first
+
+          assign first_variant_image = nil
+          assign second_variant_image = nil
+
+          for image in mod_product.images
+            assign _image_alt = image.alt | handleize
+            if _image_alt contains handleized_value
+              if _image_alt contains 'second'
+                assign second_variant_image = image
+              else
+                if first_variant_image == blank
+                  assign first_variant_image = image
+                elsif second_variant_image == blank
+                  assign second_variant_image = image
+                endif
+              endif
+            endif
+          endfor
+
+          assign first_image = first_variant_image | default: color_variant.featured_media | default: product_first_image
+          assign second_image = second_variant_image | default: product_second_image
+
+          render 'image', image: first_image, sizes: '360px', container: true, container_class: first_media_classes,           image_aspect_ratio: 1, attributes: attributes, disable_padding: true
+
+          if second_image
+            render 'image', image: second_image, sizes: '360px', container: true, container_class: second_media_classes,           image_aspect_ratio: 1, attributes: attributes, disable_padding: true
+          endif
+        endfor
+      -%}
+    {%- else -%}
+      {%- if product_first_image != blank -%}
+        {%- render 'image',
+          image: product_first_image,
+          sizes: '360px',
+          container: true,
+          container_class: 'js-product-image front active',
+          image_aspect_ratio: 1,
+          disable_padding: true
+        -%}
+      {%- endif -%}
+    {%- endif -%}
+  </a>
+  <div class="product-card__content flex aic">
+    <div class="product-card__detail">
+      <div class="product-card__title utility1 text-bold">
+        {{ mod_product.title }}
+      </div>
+      <div class="product-card__title">
+        {{ mod_product.description }}
+      </div>
+      <div class="product-card__swatches swatches flex aic">
+        {%- liquid
+          assign color_count_limit = 5
+          assign color_options_length = 0
+          assign color_count = 0
+        -%}
+        {%- for option in mod_product.options_with_values -%}
+          {%- assign option_handle = option.name | handleize -%}
+
+          {%- if option_handle == 'color' -%}
+            {%- assign color_options_length = option.values | size -%}
+            {%- for value in option.values -%}
+              {%- assign color_count = color_count | plus: 1 -%}
+              <div
+                class="swatch-container relative js-swatch
+                  {% if color_count > color_count_limit %}
+                    hidden
+                  {% endif %}
+                "
+                {% if color_count > color_count_limit %}
+                  data-addition
+                {% endif %}
+              >
+                <div class="swatch js-swatch-item"
+                  aria-label="{{ value }}"
+                  data-handle="{{ value | handleize }}"
+                > </div>
+                <div class="swatch-detail">
+                  {{- value -}}
+                </div>
+              </div>
+            {%- endfor -%}
+
+            {%- if color_options_length > color_count_limit -%}
+              <button class="button button--tertiary swatch-more js-swatch-more">
+                +{{ color_options_length | minus: color_count_limit }}
+              </button>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    <a href="{{ mod_product.url }}" class="product-card__link small-hide link">
+      {%- render 'icon-arrow-top-right', type: 'rounded', class: 'block w1 ha' -%}
+    </a>
+  </div>
+</product-card>

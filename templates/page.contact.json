@@ -1,0 +1,123 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color": "#000000",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "color": "#000000",
+        "background_color": "#f2f2f2",
+        "sidebar_content": "<p><strong>General contact<\/strong><\/p><p><a href=\"mailto:hello@bluemothhearing.com\" title=\"mailto:hello@bluemothhearing.com\">hello@bluemothhearing.com<\/a><\/p><p>(855) 854-6684<\/p><p><\/p><p><strong>Press<\/strong><\/p><p><a href=\"mailto:bluemoth@launchsquad.com\" title=\"mailto:bluemoth@launchsquad.com\">bluemoth@launchsquad.com<\/a><\/p><p><\/p><p><strong>Sales<\/strong><\/p><p><a href=\"mailto:sales@@launchsquad.com\" title=\"mailto:sales@@launchsquad.com\">sales@@launchsquad.com<\/a><\/p><p><\/p><p><strong>Support<\/strong><\/p><p><a href=\"mailto:support@launchsquad.com\" title=\"mailto:support@launchsquad.com\">support@launchsquad.com<\/a><\/p>",
+        "sidebar_banner_image": "shopify:\/\/shop_images\/Short_image_row.png",
+        "sidebar_banner_title": "<p>Schedule a <em><strong>free<\/strong><\/em><\/p><p>15-min consultation<\/p>",
+        "sidebar_banner_description": "With one of our hearing specialists to discuss your needs and talk through recommendations.",
+        "sidebar_banner_button_text": "Schedule Now",
+        "sidebar_banner_button_url": "shopify:\/\/pages\/book-a-call",
+        "form_topic_options": "Topic1\nTopic2\nTopic3",
+        "form_description": "This site is protected by reCAPTCHA Enterprise and the Google <a href=\"#\" target=\"_blank\" title=\"#\">Privacy Policy<\/a> and <a href=\"#\" target=\"_blank\" title=\"#\">Terms of Service<\/a> apply."
+      }
+    },
+    "information_QF3WXw": {
+      "type": "information",
+      "blocks": {
+        "item_Tek7fX": {
+          "type": "item",
+          "settings": {
+            "title": "View FAQs",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "View FAQs",
+            "button_link": "shopify:\/\/pages\/faqs"
+          }
+        },
+        "item_z8cVJd": {
+          "type": "item",
+          "settings": {
+            "title": "About BlueMoth",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Company",
+            "button_link": "shopify:\/\/pages\/our-team"
+          }
+        },
+        "item_ncEBbw": {
+          "type": "item",
+          "settings": {
+            "title": "Learn about our Home Trial",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Get Started",
+            "button_link": "#"
+          }
+        },
+        "item_WJAgK8": {
+          "type": "item",
+          "settings": {
+            "title": "Free Consultation",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Learn More",
+            "button_link": "shopify:\/\/pages\/book-a-call"
+          }
+        },
+        "item_9wLMPY": {
+          "type": "item",
+          "settings": {
+            "title": "Prescription Information",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Learn More",
+            "button_link": "shopify:\/\/pages\/prescriptions"
+          }
+        },
+        "item_cDTma7": {
+          "type": "item",
+          "settings": {
+            "title": "Insurance Information",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Learn More",
+            "button_link": "#"
+          }
+        },
+        "item_7xPUfH": {
+          "type": "item",
+          "settings": {
+            "title": "Warranty Information",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Learn More",
+            "button_link": "shopify:\/\/pages\/warranty"
+          }
+        },
+        "item_x88HXB": {
+          "type": "item",
+          "settings": {
+            "title": "45 Day Returns",
+            "detail": "Lorem ipsum dolor sit adipis cing elit.",
+            "button_text": "Learn More",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "item_Tek7fX",
+        "item_z8cVJd",
+        "item_ncEBbw",
+        "item_WJAgK8",
+        "item_9wLMPY",
+        "item_cDTma7",
+        "item_7xPUfH",
+        "item_x88HXB"
+      ],
+      "settings": {
+        "color": "#000000",
+        "background_color": "#ffffff",
+        "title": "Helpful information"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "information_QF3WXw"
+  ]
+}

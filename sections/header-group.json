@@ -1,0 +1,120 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping on all orders.",
+            "link": ""
+          }
+        },
+        "88593c4c-b149-404c-90c5-b7ebb05dfe40": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "88593c4c-b149-404c-90c5-b7ebb05dfe40"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "91806648-2f6f-48f6-be4e-cda6ca3944d5": {
+          "type": "subtitle",
+          "settings": {
+            "title": "Hearing Loss",
+            "subtitle": "Choose your path to sound."
+          }
+        },
+        "2d96e6a1-b0c1-45d9-a50e-2aa788c0d610": {
+          "type": "subtitle",
+          "settings": {
+            "title": "Tinnitus",
+            "subtitle": "Choose your path to sound."
+          }
+        },
+        "9146bdf6-0cf0-484d-b748-9155adefbceb": {
+          "type": "subtitle",
+          "settings": {
+            "title": "About BlueMoth",
+            "subtitle": "All about our WHY"
+          }
+        },
+        "53251cc2-77dd-454b-8f03-64d1520a08ef": {
+          "type": "subtitle",
+          "settings": {
+            "title": "Team",
+            "subtitle": "Get to know us."
+          }
+        },
+        "6ce241df-f5d1-47c9-8a88-80e5ac18ecc8": {
+          "type": "subtitle",
+          "settings": {
+            "title": "FAQs",
+            "subtitle": "All your questions answered."
+          }
+        },
+        "subtitle_B3Xeiz": {
+          "type": "subtitle",
+          "settings": {
+            "title": "Our Blogs",
+            "subtitle": "Read our blog posts"
+          }
+        },
+        "subtitle_CtQNHX": {
+          "type": "subtitle",
+          "settings": {
+            "title": "News",
+            "subtitle": "Keep up to date"
+          }
+        }
+      },
+      "block_order": [
+        "91806648-2f6f-48f6-be4e-cda6ca3944d5",
+        "2d96e6a1-b0c1-45d9-a50e-2aa788c0d610",
+        "9146bdf6-0cf0-484d-b748-9155adefbceb",
+        "53251cc2-77dd-454b-8f03-64d1520a08ef",
+        "6ce241df-f5d1-47c9-8a88-80e5ac18ecc8",
+        "subtitle_B3Xeiz",
+        "subtitle_CtQNHX"
+      ],
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "right_menu": "right-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

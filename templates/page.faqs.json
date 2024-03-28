@@ -1,0 +1,345 @@
+{
+  "sections": {
+    "hero": {
+      "type": "faq-hero",
+      "blocks": {
+        "90c17c66-0b7e-4700-abc0-3697af8d13db": {
+          "type": "button",
+          "settings": {
+            "title": "Contact Us",
+            "url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "40d056ff-952e-42a7-9f1e-ed1aab85c4b1": {
+          "type": "button",
+          "settings": {
+            "title": "Book Your Free Consulation",
+            "url": "shopify:\/\/pages\/book-a-call"
+          }
+        },
+        "7da468bb-dc47-49b0-9703-c76b8a7b20c3": {
+          "type": "button",
+          "settings": {
+            "title": "Company",
+            "url": "shopify:\/\/pages\/our-team"
+          }
+        }
+      },
+      "block_order": [
+        "90c17c66-0b7e-4700-abc0-3697af8d13db",
+        "40d056ff-952e-42a7-9f1e-ed1aab85c4b1",
+        "7da468bb-dc47-49b0-9703-c76b8a7b20c3"
+      ],
+      "settings": {
+        "color": "",
+        "background_color": "#F2F2F2",
+        "title": "<p>{{ page.title }}<\/p>",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\u2028et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    },
+    "main": {
+      "type": "main-faq",
+      "blocks": {
+        "599415dd-a23a-4701-ac5c-19c56db93592": {
+          "type": "group",
+          "settings": {
+            "title": "General Hearing"
+          }
+        },
+        "9ad49afb-4138-47ab-88a7-11f02c9e8b55": {
+          "type": "text",
+          "settings": {
+            "title": "How do I know if I have hearing loss?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "b6cb2543-d8c2-4954-9da1-34526562205a": {
+          "type": "text",
+          "settings": {
+            "title": "What are some other indications that I may have hearing loss?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "de52973d-e911-4a2a-886c-bd4aab31438e": {
+          "type": "text",
+          "settings": {
+            "title": "What is the difference between a hearing screening and a hearing test?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "cfe5603e-4871-416c-a608-2858bdc63dd9": {
+          "type": "text",
+          "settings": {
+            "title": "What causes hearing loss?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "e990034c-b4ec-43f4-8c42-af31cb02d185": {
+          "type": "text",
+          "settings": {
+            "title": "Are there different types of hearing loss?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "c52cc8fe-40d9-4d37-90e0-1e1bcf424591": {
+          "type": "text",
+          "settings": {
+            "title": "Do I need two hearing aids, or can I just get one?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "5480524e-17b2-4c53-a587-e72f42f8c126": {
+          "type": "text",
+          "settings": {
+            "title": "Is my hearing \"bad enough\" for hearing devices? Or could\/should I wait?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "acb207c9-1b98-4cc8-9dd8-de0e6014c67d": {
+          "type": "text",
+          "settings": {
+            "title": "How often does hearing get worse?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "401d8802-bcac-491a-a0a8-91b6b9ad9cdc": {
+          "type": "text",
+          "settings": {
+            "title": "What if my hearing suddenly changes?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "44ea7d74-59bd-41e9-9c20-72c8d94a9fd8": {
+          "type": "text",
+          "settings": {
+            "title": "How do I know if I have hearing loss or just earwax?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "f740da2b-0c51-413a-88ee-84096d0d4e1f": {
+          "type": "text",
+          "settings": {
+            "title": "Can I prevent hearing loss?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "c7583cff-e1e8-48c5-aa15-856aba6f9935": {
+          "type": "group",
+          "settings": {
+            "title": "Tinnitus"
+          }
+        },
+        "b229d562-5b4c-482b-a180-784de99fc02c": {
+          "type": "text",
+          "settings": {
+            "title": "What is tinnitus?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "b766e3de-e24f-47cd-b49e-ce2d47f4818e": {
+          "type": "text",
+          "settings": {
+            "title": "What causes tinnitus?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "471ed08b-b29e-46d4-99ad-5080dd4cfc56": {
+          "type": "text",
+          "settings": {
+            "title": "Is there a cure for tinnitus?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "dcb089d2-8d09-4e1a-8991-c874c7dea040": {
+          "type": "text",
+          "settings": {
+            "title": "Why are hearing devices recommended for tinnitus?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "ffa2f276-bc20-4d66-a9bc-b52af2661ebc": {
+          "type": "text",
+          "settings": {
+            "title": "What makes tinnitus worse?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "cdca1295-57fe-4b80-8f6f-6620599cb86f": {
+          "type": "text",
+          "settings": {
+            "title": "What makes tinnitus worse?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "99c8ac36-0cc7-4b1f-a8ca-e7c550ddcb35": {
+          "type": "group",
+          "settings": {
+            "title": "OTC vs. Prescription"
+          }
+        },
+        "011c159a-fb40-4387-b8d6-76641dca2ccd": {
+          "type": "text",
+          "settings": {
+            "title": "How do I know what devices are OTC or Prescription?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "27ae9014-25dc-4bbc-ae1f-f5840c3decff": {
+          "type": "text",
+          "settings": {
+            "title": "Are OTC products any good?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "a6535e8f-5b78-4b97-8222-e151755bd3c1": {
+          "type": "text",
+          "settings": {
+            "title": "Which devices are currently OTC?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "c2d36eb3-52ac-44a1-99d5-4dc73aefc45d": {
+          "type": "group",
+          "settings": {
+            "title": "Hearing Aids + Technology"
+          }
+        },
+        "5f0825df-824d-4d68-b3a7-e41491b57a24": {
+          "type": "text",
+          "settings": {
+            "title": "Will I have normal hearing with hearing aids?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "ca4c8757-7c57-4608-8d6a-decc2c7bdec1": {
+          "type": "text",
+          "settings": {
+            "title": "Why are hearing aids so expensive?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "380b9a48-0190-4c3d-8b3b-72573948f044": {
+          "type": "text",
+          "settings": {
+            "title": "Does insurance cover hearing aids?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "390721ea-277a-4eb8-92ed-46ae0eff41ad": {
+          "type": "text",
+          "settings": {
+            "title": "Is there actually a big difference between hearing aid brands?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "cdc38cce-8231-4fa3-b0d1-68c6868b5ab7": {
+          "type": "text",
+          "settings": {
+            "title": "Can I try them first?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "e101ceea-fc36-4f70-9bba-03d69985f49a": {
+          "type": "text",
+          "settings": {
+            "title": "What is the process going to be like when I get fit with devices?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "9d9ff141-b023-460b-b22b-60a3cd395314": {
+          "type": "text",
+          "settings": {
+            "title": "How long do hearing aids last?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "2ab4f9f6-3e65-4732-ae94-67db81e82e25": {
+          "type": "text",
+          "settings": {
+            "title": "Can I wear them in water?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "ed8aae4f-07a8-40d7-8a0a-9e94145b486c": {
+          "type": "text",
+          "settings": {
+            "title": "Do I need to wear them to sleep?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        },
+        "412f8b89-09ac-425d-ac89-623e9df48642": {
+          "type": "text",
+          "settings": {
+            "title": "What are realistic expectations for devices?",
+            "content": "<p>The difference between a hearing screening and a hearing test is like the difference between a great first date and that pivotal moment when you just know you want to spend the rest of your life with someone.<\/p><p>The type of hearing loss that warrants hearing aids (the most common), known as Sensorineural Hearing Loss (SNHL), is a forever kind of thing. So, before our audiologists can prescribe a personalized device for your wants and needs, we want to know ALL the details of your hearing health.<\/p><p>This is where a hearing test comes in. This test assesses the health of your outer, middle, and inner ears. It also assesses:<\/p><ul><li>Your ability to hear at different intensities across different frequencies<\/li><li>Your ability to understand speech<\/li><li>Your ability to understand speech in background noise<\/li><li>How well your ears respond to loud noises<\/li><li>If there are any differences in hearing between your left and right ears<\/li><\/ul><p>This info ensures we give you everything you need to hear better, better.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "599415dd-a23a-4701-ac5c-19c56db93592",
+        "9ad49afb-4138-47ab-88a7-11f02c9e8b55",
+        "b6cb2543-d8c2-4954-9da1-34526562205a",
+        "de52973d-e911-4a2a-886c-bd4aab31438e",
+        "cfe5603e-4871-416c-a608-2858bdc63dd9",
+        "e990034c-b4ec-43f4-8c42-af31cb02d185",
+        "c52cc8fe-40d9-4d37-90e0-1e1bcf424591",
+        "5480524e-17b2-4c53-a587-e72f42f8c126",
+        "acb207c9-1b98-4cc8-9dd8-de0e6014c67d",
+        "401d8802-bcac-491a-a0a8-91b6b9ad9cdc",
+        "44ea7d74-59bd-41e9-9c20-72c8d94a9fd8",
+        "f740da2b-0c51-413a-88ee-84096d0d4e1f",
+        "c7583cff-e1e8-48c5-aa15-856aba6f9935",
+        "b229d562-5b4c-482b-a180-784de99fc02c",
+        "b766e3de-e24f-47cd-b49e-ce2d47f4818e",
+        "471ed08b-b29e-46d4-99ad-5080dd4cfc56",
+        "dcb089d2-8d09-4e1a-8991-c874c7dea040",
+        "ffa2f276-bc20-4d66-a9bc-b52af2661ebc",
+        "cdca1295-57fe-4b80-8f6f-6620599cb86f",
+        "99c8ac36-0cc7-4b1f-a8ca-e7c550ddcb35",
+        "011c159a-fb40-4387-b8d6-76641dca2ccd",
+        "27ae9014-25dc-4bbc-ae1f-f5840c3decff",
+        "a6535e8f-5b78-4b97-8222-e151755bd3c1",
+        "c2d36eb3-52ac-44a1-99d5-4dc73aefc45d",
+        "5f0825df-824d-4d68-b3a7-e41491b57a24",
+        "ca4c8757-7c57-4608-8d6a-decc2c7bdec1",
+        "380b9a48-0190-4c3d-8b3b-72573948f044",
+        "390721ea-277a-4eb8-92ed-46ae0eff41ad",
+        "cdc38cce-8231-4fa3-b0d1-68c6868b5ab7",
+        "e101ceea-fc36-4f70-9bba-03d69985f49a",
+        "9d9ff141-b023-460b-b22b-60a3cd395314",
+        "2ab4f9f6-3e65-4732-ae94-67db81e82e25",
+        "ed8aae4f-07a8-40d7-8a0a-9e94145b486c",
+        "412f8b89-09ac-425d-ac89-623e9df48642"
+      ],
+      "settings": {
+        "color": "",
+        "sidebar_color": "#346FB7",
+        "background_color": "#F2F2F2",
+        "sidebar_title": "How can we help?"
+      }
+    },
+    "89b3baf6-abf5-42af-a5d3-945af5946c39": {
+      "type": "hero",
+      "settings": {
+        "enable_animation": true,
+        "animation_type": "bottom",
+        "type": "secondary",
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/bottom-hero-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/bottom-hero-mobile.png",
+        "heading": "<p>Have <em><strong>questions?<\/strong><\/em><br\/>            We hear you.<\/p>",
+        "subheading": "Schedule a free 15-minute consultation with one of our hearing specialists to discuss your needs and talk through recommendations.",
+        "button_1_text": "Book Your FREE Consulation",
+        "button_1_link": "shopify:\/\/collections",
+        "button_1_type": "primary",
+        "button_2_text": "",
+        "button_2_link": ""
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "89b3baf6-abf5-42af-a5d3-945af5946c39"
+  ]
+}

@@ -1,0 +1,166 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-featured-logos.css'
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="featured-logos
+    {% if mod_section.add_top_space %}
+      featured-logos--has-top
+    {% endif %}
+    {% if mod_section.add_bottom_space %}
+      featured-logos--has-bottom
+    {% endif %}
+  "
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="featured-logos__inner
+    {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+      scroll-trigger animate--slide-in
+    {% endif %}
+  ">
+    {%- if mod_section.heading != blank -%}
+      <h2 class="featured-logos__title h4 center">
+        {{- mod_section.heading -}}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="featured-logos__items flex aic jcc">
+        {%- for block in section.blocks -%}
+          {%- assign mod_block = block.settings -%}
+          {%- if mod_block.image != blank -%}
+            {% if mod_block.link != blank %}
+              <a
+                href="{{ mod_block.link }}"
+                target="_blank"
+                class="logo-item"
+                style="
+                  --content-width-mobile: {{ mod_block.width_mobile }}px;
+                  --content-width-desktop: {{ mod_block.width_desktop }}px;
+                "
+              >
+            {% else %}
+              <div
+                class="logo-item"
+                style="
+                  --content-width-mobile: {{ mod_block.width_mobile }}px;
+                  --content-width-desktop: {{ mod_block.width_desktop }}px;
+                "
+              >
+            {% endif %}
+              {%- render 'image',
+                image: mod_block.image,
+                sizes: '100vw',
+                container: true,
+                container_class: 'logo-item__image'
+              -%}
+            {% if mod_block.link != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-logos.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.featured-logos.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-logos.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.featured-logos.settings.color.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.featured-logos.settings.background_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_top_space",
+      "label": "t:sections.featured-logos.settings.add_top_space.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "add_bottom_space",
+      "label": "t:sections.featured-logos.settings.add_bottom_space.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-logos.settings.header__content.content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.featured-logos.settings.heading.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "t:sections.featured-logos.blocks.logo.name",
+      "settings": [
+        {
+          "type": "range",
+          "min": 50,
+          "max": 200,
+          "step": 5,
+          "default": 60,
+          "unit": "px",
+          "id": "width_mobile",
+          "label": "t:sections.featured-logos.blocks.logo.settings.width_mobile.label"
+        },
+        {
+          "type": "range",
+          "min": 50,
+          "max": 200,
+          "step": 5,
+          "default": 75,
+          "unit": "px",
+          "id": "width_desktop",
+          "label": "t:sections.featured-logos.blocks.logo.settings.width_desktop.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.featured-logos.blocks.logo.settings.image.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.featured-logos.blocks.logo.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-logos.presets.name"
+    }
+  ]
+}
+{% endschema %}

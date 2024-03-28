@@ -1,0 +1,233 @@
+{
+  "sections": {
+    "page_hero_tBtwGj": {
+      "type": "page-hero",
+      "settings": {
+        "enable_animation": true,
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/About-Hero-Desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/About-Hero-Mobile.png",
+        "heading": "<p>About BlueMoth<\/p>",
+        "subheading": "We believe everyone deserves better hearing.",
+        "enable_overlay": false,
+        "overlay_color": "#000000",
+        "overlay_opacity": 75
+      }
+    },
+    "text_rows_67DnGJ": {
+      "type": "text-rows",
+      "blocks": {
+        "row_RakdcM": {
+          "type": "row",
+          "settings": {
+            "title": "500,000+",
+            "description": "Hearing devices sold"
+          }
+        },
+        "row_Fddw4E": {
+          "type": "row",
+          "settings": {
+            "title": "20+ Years",
+            "description": "Experience"
+          }
+        },
+        "row_regTRn": {
+          "type": "row",
+          "settings": {
+            "title": "1,000",
+            "description": "Stat detail"
+          }
+        },
+        "row_h9AqhF": {
+          "type": "row",
+          "settings": {
+            "title": "17",
+            "description": "Stat detail"
+          }
+        }
+      },
+      "block_order": [
+        "row_RakdcM",
+        "row_Fddw4E",
+        "row_regTRn",
+        "row_h9AqhF"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "color": "#fff",
+        "background_color": "#000000",
+        "title": "<p>A simple mission<br\/>            of <em><strong>better hearing<\/strong><\/em><\/p>",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      }
+    },
+    "cd4e9215-9838-42f0-bdc9-1429efc9e661": {
+      "type": "marquee",
+      "settings": {
+        "marquee_text": "Hear life, <em><strong>full frequency<\/strong><\/em>.",
+        "marquee_repeat": true,
+        "marquee_interpunct": "•",
+        "marquee_animate": true,
+        "marquee_animate_speed": 56,
+        "marquee_scroll_direction": "rtl",
+        "marquee_background_color": "#000000",
+        "marquee_text_color": "#ffffff"
+      }
+    },
+    "19e141ce-4faf-49fa-ace3-53cd16353bda": {
+      "type": "image-with-text",
+      "blocks": {
+        "5c781168-137e-4ce6-83c1-bcd3c90d679d": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>We understand that better<br\/>              hearing is <em><strong>for all ages<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "secondary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "0b58941b-20a6-4ca0-b184-31e8fe9f7221": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/For-All-Ages.png"
+          }
+        }
+      },
+      "block_order": [
+        "5c781168-137e-4ce6-83c1-bcd3c90d679d",
+        "0b58941b-20a6-4ca0-b184-31e8fe9f7221"
+      ],
+      "settings": {
+        "title": "",
+        "color": "",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": false,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "3aa84100-f01b-49c1-85a4-7b8fadbf16eb": {
+      "type": "text-banner",
+      "blocks": {
+        "7347fc8f-08ef-4eac-a1d2-5c4ffb332fe4": {
+          "type": "column",
+          "settings": {
+            "title": "Difference point headline",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        "d38e9ecb-b2c1-4b6d-89d7-870f68e9d92c": {
+          "type": "column",
+          "settings": {
+            "title": "Difference point headline",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        "15358a46-5076-429f-97a9-d598deeae0d8": {
+          "type": "column",
+          "settings": {
+            "title": "Difference point headline",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        "ee773545-b56a-4caf-9159-5b61f0bca5ba": {
+          "type": "column",
+          "settings": {
+            "title": "Difference point headline",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        }
+      },
+      "block_order": [
+        "7347fc8f-08ef-4eac-a1d2-5c4ffb332fe4",
+        "d38e9ecb-b2c1-4b6d-89d7-870f68e9d92c",
+        "15358a46-5076-429f-97a9-d598deeae0d8",
+        "ee773545-b56a-4caf-9159-5b61f0bca5ba"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "color": "#000000",
+        "background_color": "#a5ccfb",
+        "heading": "Why BlueMoth is <em><strong>different<\/strong><\/em>",
+        "heading_style": "normal",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "button_type": "tertiary"
+      }
+    },
+    "57e1a623-7c30-4936-8d12-a85ad613063a": {
+      "type": "image-with-text",
+      "blocks": {
+        "9665d160-47d9-49a6-b5f5-df1337b3f316": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Approach.png"
+          }
+        },
+        "1afb34a0-6fd9-4e7a-8a48-cfc22b6dcf98": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>The BlueMoth <em><strong>approach<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "",
+            "button_1_link": "shopify:\/\/collections\/frontpage",
+            "button_1_type": "secondary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "9665d160-47d9-49a6-b5f5-df1337b3f316",
+        "1afb34a0-6fd9-4e7a-8a48-cfc22b6dcf98"
+      ],
+      "settings": {
+        "title": "",
+        "color": "",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": false,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "b84ee78d-02db-4387-8456-fcc87887b3cb": {
+      "type": "hero",
+      "settings": {
+        "enable_animation": true,
+        "animation_type": "bottom",
+        "type": "secondary",
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/Get-To-Know-Founder.png",
+        "mobile_image": "shopify:\/\/shop_images\/bottom-hero-mobile.png",
+        "heading": "<p>Get to know<\/p><p>            our founder, <em><strong>Mel<\/strong><\/em><\/p>",
+        "subheading": "Lorem ipsum dolor sit amet consectetur adipiscing elit \u2028sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "button_1_text": "View Mel’s Bio",
+        "button_1_link": "shopify:\/\/collections",
+        "button_1_type": "primary",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_type": "primary"
+      }
+    }
+  },
+  "order": [
+    "page_hero_tBtwGj",
+    "text_rows_67DnGJ",
+    "cd4e9215-9838-42f0-bdc9-1429efc9e661",
+    "19e141ce-4faf-49fa-ace3-53cd16353bda",
+    "3aa84100-f01b-49c1-85a4-7b8fadbf16eb",
+    "57e1a623-7c30-4936-8d12-a85ad613063a",
+    "b84ee78d-02db-4387-8456-fcc87887b3cb"
+  ]
+}

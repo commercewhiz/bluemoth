@@ -1,0 +1,34 @@
+.related-articles__inner {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.related-articles__content {
+  margin-top: 2.5rem;
+}
+
+.related-articles .card-grid {
+  --grid-gap: 0;
+}
+
+.related-articles .article-card {
+  max-width: 27rem;
+  margin-right: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .related-articles .article-card {
+    max-width: 35rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .related-articles .card-grid {
+    --grid-gap: 2rem;
+  }
+
+  .related-articles .article-card {
+    max-width: none;
+    margin-right: 0;
+  }
+}

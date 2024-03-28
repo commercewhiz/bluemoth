@@ -1,0 +1,238 @@
+{%- liquid
+  echo 'section-image-with-text.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="image-with-text image-side-stacked
+    {% if mod_section.add_top_space %}
+      image-with-text--has-top
+    {% endif %}
+    {% if mod_section.add_bottom_space %}
+      image-with-text--has-bottom
+    {% endif %}
+  "
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="container">
+    <div class="image-with-text__inner flex fdc">
+      <div class="image-with-text__column image-side-stacked__head">
+        <h2 class="iwt-title text-pre">{{ mod_section.title }}</h2>
+      </div>
+
+      <div class="image-with-text__column">
+        {%- for block in section.blocks -%}
+          {%- assign mod_block = block.settings -%}
+          <{%- if forloop.last -%}
+            stack-item
+          {%- else -%}
+            div
+          {% endif %}
+            class="iwt-stack
+            block
+            {% if forloop.first %}
+              iwt-stack--first
+            {% endif %}
+            {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+              scroll-trigger animate--slide-in
+            {% endif %}
+          ">
+            <div class="iwt-stack__image">
+              {%- liquid
+                assign container_class = ''
+                if mod_block.add_border_round
+                  assign container_class = 'img--rounded'
+                endif
+              -%}
+              {%- if mod_block.image != blank -%}
+                {%- render 'image',
+                  image: mod_block.image,
+                  sizes: '100vw',
+                  container: true,
+                  container_class: container_class
+                -%}
+              {%- endif -%}
+            </div>
+
+            {%- if mod_block.heading != blank -%}
+              <h3 class="iwt-stack__title">
+                {{- mod_block.heading -}}
+              </h3>
+            {%- endif -%}
+
+            {%- if mod_block.subheading != blank -%}
+              <div class="iwt-stack__subtitle">
+                {{- mod_block.subheading -}}
+              </div>
+            {%- endif -%}
+
+            <div class="iwt-stack__actions flex aic">
+              {%- if mod_block.button_1_link != blank and mod_block.button_1_text != blank -%}
+                <a
+                  href="{{ mod_block.button_1_link }}"
+                  class="iwt-stack__link link-with-icon button button--{{ mod_block.button_1_type }}"
+                >
+                  <span class="text">{{- mod_block.button_1_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+
+              {%- if mod_block.button_2_link != blank and mod_block.button_2_text != blank -%}
+                <a
+                  href="{{ mod_block.button_2_link }}"
+                  class="iwt-stack__link link-with-icon button button--tertiary"
+                >
+                  <span class="text">{{- mod_block.button_2_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </{% if forloop.last %}
+            stack-item
+          {% else %}
+            div
+          {% endif %}>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image-side-stacked.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:sections.image-side-stacked.settings.title.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-side-stacked.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.image-side-stacked.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.image-side-stacked.settings.background_color.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_top_space",
+      "label": "t:sections.image-side-stacked.settings.add_top_space.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "add_bottom_space",
+      "label": "t:sections.image-side-stacked.settings.add_bottom_space.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.image-side-stacked.settings.enable_animation.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stack_image",
+      "name": "t:sections.image-side-stacked.blocks.stack_image.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.image-side-stacked.blocks.stack_image.settings.header__style.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "add_border_round",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.add_border_round.label",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-side-stacked.blocks.stack_image.settings.header__image.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.image.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-side-stacked.blocks.stack_image.settings.header__content.content"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.heading.label"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.subheading.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-side-stacked.blocks.stack_image.settings.header__button_1.content"
+        },
+        {
+          "type": "text",
+          "id": "button_1_text",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_1_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_1_link",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_1_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_1_type",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_1_type.label",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_1_type.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_1_type.options__2.label"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image-side-stacked.blocks.stack_image.settings.header__button_2.content"
+        },
+        {
+          "type": "text",
+          "id": "button_2_text",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_2_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_2_link",
+          "label": "t:sections.image-side-stacked.blocks.stack_image.settings.button_2_link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-side-stacked.presets.name"
+    }
+  ]
+}
+{% endschema %}

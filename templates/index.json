@@ -1,0 +1,369 @@
+{
+  "sections": {
+    "f11ee01b-9ab3-4eb5-ba4b-857e4496b7ec": {
+      "type": "hero",
+      "settings": {
+        "enable_animation": true,
+        "animation_type": "top",
+        "type": "primary",
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/hero-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/hero-mobile.png",
+        "heading": "<p>Hear life,<\/p><p>       <em><strong>full frequency.<\/strong><\/em><\/p>",
+        "subheading": "We save you time and money, by bringing the best in premium prescription hearing technology and virtual telehealth support, directly to you.",
+        "button_1_text": "Shop Now",
+        "button_1_link": "shopify:\/\/collections",
+        "button_1_type": "primary",
+        "button_2_text": "Try at Home",
+        "button_2_link": "shopify:\/\/collections\/frontpage",
+        "button_2_type": "primary"
+      }
+    },
+    "7bdb87d0-9664-4b6f-941e-d097880ae1de": {
+      "type": "how-works",
+      "blocks": {
+        "a1ad0e04-de69-4523-a7f2-cf3023bc97c0": {
+          "type": "title",
+          "settings": {
+            "title": "Customize your devices",
+            "description": "Take our simple quiz to find out the best hearing technologies for you to try at home. Super simple, and fast.\u2028We promise."
+          }
+        },
+        "34f97507-28db-4813-a2e9-7071334106f4": {
+          "type": "title",
+          "settings": {
+            "title": "Try out 3 options",
+            "description": "You’ll get a BLUEMOTH Experience Box in the mail (Hooray!) with 3 sets of hearing aids and a simple step-by-step guide to help you narrow down the best tech for you."
+          }
+        },
+        "69bb1bf8-9cc0-41d1-8465-86e0add9bcf4": {
+          "type": "title",
+          "settings": {
+            "title": "Choose your favorite",
+            "description": "Choose your favorite and send back the demos. Next, we’ll hop on a telehealth call\u2028to customize your devices to your ears content."
+          }
+        }
+      },
+      "block_order": [
+        "a1ad0e04-de69-4523-a7f2-cf3023bc97c0",
+        "34f97507-28db-4813-a2e9-7071334106f4",
+        "69bb1bf8-9cc0-41d1-8465-86e0add9bcf4"
+      ],
+      "settings": {
+        "color": "",
+        "background_color": "",
+        "top_color": "#ffffff",
+        "top_image": "shopify:\/\/shop_images\/3-step-desktop.png",
+        "top_mobile_image": "shopify:\/\/shop_images\/3-step-mobile.png",
+        "heading": "<p>3 simple steps to <em><strong>better hearing<\/strong><\/em>.<\/p>",
+        "subheading": "We are the only place that allows you to try three sets of premium hearing aids without having to leave your home.",
+        "bottom_heading": "<p>How <em><strong>BlueMoth<\/strong><\/em> Works<\/p>",
+        "button_text": "Get Started with Your Home Trial",
+        "button_link": "shopify:\/\/collections",
+        "button_type": "secondary"
+      }
+    },
+    "ca48b3b5-239d-4cef-a9fb-c0a43987aa94": {
+      "type": "image-side-stacked",
+      "blocks": {
+        "fd19aea1-448d-4412-8058-6b9f78a99eb1": {
+          "type": "stack_image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/hear-better-1.png",
+            "heading": "<p>Hearing loss<\/p>",
+            "subheading": "We get it. “Prescription hearing tech” might feel like a big, scary thing. But we want to make it a no-brainer.",
+            "button_1_text": "Learn More",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "primary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "b33d510d-aba2-41f2-a208-44fb3d55baae": {
+          "type": "stack_image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/hear-better-2.png",
+            "heading": "<p>Tinnitus relief<\/p>",
+            "subheading": "Although we are loud and proud sound advocates, we also appreciate the need for blissful quiet.",
+            "button_1_text": "Learn More",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "primary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "fd19aea1-448d-4412-8058-6b9f78a99eb1",
+        "b33d510d-aba2-41f2-a208-44fb3d55baae"
+      ],
+      "settings": {
+        "title": "<p>Hear better.<\/p><p>                  <em><strong>Better.<\/strong><\/em><\/p>",
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true
+      }
+    },
+    "cd4e9215-9838-42f0-bdc9-1429efc9e661": {
+      "type": "marquee",
+      "settings": {
+        "marquee_text": "Hear life, <em><strong>full frequency<\/strong><\/em>.",
+        "marquee_repeat": true,
+        "marquee_interpunct": "•",
+        "marquee_animate": true,
+        "marquee_animate_speed": 56,
+        "marquee_scroll_direction": "rtl",
+        "marquee_background_color": "#000000",
+        "marquee_text_color": "#ffffff"
+      }
+    },
+    "a0a513c1-940e-4d5f-a651-2074a97d0714": {
+      "type": "featured-products",
+      "blocks": {
+        "7f955e23-1f87-4515-b52f-63d617fa1875": {
+          "type": "product",
+          "settings": {
+            "product": "phonak-audeo™-lumity"
+          }
+        },
+        "6a2212d5-facb-4684-b29b-e634451d1d3b": {
+          "type": "product",
+          "settings": {
+            "product": "signa-charge-go-ax"
+          }
+        },
+        "c813c2dd-da2f-404d-8431-a7973830ee10": {
+          "type": "product",
+          "settings": {
+            "product": "widex-moment"
+          }
+        }
+      },
+      "block_order": [
+        "7f955e23-1f87-4515-b52f-63d617fa1875",
+        "6a2212d5-facb-4684-b29b-e634451d1d3b",
+        "c813c2dd-da2f-404d-8431-a7973830ee10"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "section_type": "secondary",
+        "color": "",
+        "background_color": "#f2f2f2",
+        "heading": "<p>Our curated <em><strong>products<\/strong><\/em><\/p>",
+        "button_text": "Compare Devices",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "57e1a623-7c30-4936-8d12-a85ad613063a": {
+      "type": "image-with-text",
+      "blocks": {
+        "1afb34a0-6fd9-4e7a-8a48-cfc22b6dcf98": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>Meet our team of<\/p><p>            <em><strong>hearing professionals<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "Meet the Team",
+            "button_1_link": "shopify:\/\/collections\/frontpage",
+            "button_1_type": "secondary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "9665d160-47d9-49a6-b5f5-df1337b3f316": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/meet-team.png"
+          }
+        }
+      },
+      "block_order": [
+        "1afb34a0-6fd9-4e7a-8a48-cfc22b6dcf98",
+        "9665d160-47d9-49a6-b5f5-df1337b3f316"
+      ],
+      "settings": {
+        "title": "",
+        "color": "",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": false,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "7f781287-7770-4d4e-9ea2-64d3a8c7c673": {
+      "type": "reviews-carousel",
+      "blocks": {
+        "7907fc86-3cc0-43f5-9f42-49a2f8aab8fa": {
+          "type": "review_item",
+          "settings": {
+            "content_background": "#131313",
+            "product_color": "#000000",
+            "product_background": "#ffffff",
+            "review_score": 4,
+            "content": "1 - “Wow. I didn't realize how muffled my own hearing was until I tried these. Was not expecting this. What a difference.”",
+            "customer_name": "Ryan K., New Hampshire",
+            "product": "phonak-audeo™-lumity"
+          }
+        },
+        "90fae3bc-5cec-4ba8-bc6c-b05d98d7cc29": {
+          "type": "review_item",
+          "settings": {
+            "content_background": "#131313",
+            "product_color": "#000000",
+            "product_background": "#ffffff",
+            "review_score": 4,
+            "content": "“Wow. I didn't realize how muffled my own hearing was until I tried these. Was not expecting this. What a difference.”",
+            "customer_name": "Ryan K., New Hampshire",
+            "product": "widex-moment"
+          }
+        },
+        "d4bc1832-01d8-4124-ac67-aad75831280c": {
+          "type": "review_item",
+          "settings": {
+            "content_background": "#131313",
+            "product_color": "#000000",
+            "product_background": "#ffffff",
+            "review_score": 3,
+            "content": "“Wow. I didn't realize how muffled my own hearing was until I tried these. Was not expecting this. What a difference.”",
+            "customer_name": "Ryan K., New Hampshire",
+            "product": "phonak-audeo™-lumity"
+          }
+        },
+        "33666387-0365-48cf-80e7-7db64165e41b": {
+          "type": "review_item",
+          "settings": {
+            "content_background": "#131313",
+            "product_color": "#000000",
+            "product_background": "#ffffff",
+            "review_score": 2,
+            "content": "“Wow. I didn't realize how muffled my own hearing was until I tried these. Was not expecting this. What a difference.”",
+            "customer_name": "Ryan K., New Hampshire",
+            "product": "widex-moment"
+          }
+        },
+        "754df36d-39af-4ba8-af7d-7346f910d548": {
+          "type": "review_item",
+          "settings": {
+            "content_background": "#131313",
+            "product_color": "#000000",
+            "product_background": "#ffffff",
+            "review_score": 5,
+            "content": "“Wow. I didn't realize how muffled my own hearing was until I tried these. Was not expecting this. What a difference.”",
+            "customer_name": "Ryan K., New Hampshire",
+            "product": "phonak-audeo™-lumity"
+          }
+        },
+        "b2f3df54-a13f-4a5d-bdeb-e63f1592fde8": {
+          "type": "review_item",
+          "settings": {
+            "content_background": "#131313",
+            "product_color": "#000000",
+            "product_background": "#ffffff",
+            "review_score": 1,
+            "content": "“Wow. I didn't realize how muffled my own hearing was until I tried these. Was not expecting this. What a difference.”",
+            "customer_name": "Ryan K., New Hampshire",
+            "product": "widex-moment"
+          }
+        }
+      },
+      "block_order": [
+        "7907fc86-3cc0-43f5-9f42-49a2f8aab8fa",
+        "90fae3bc-5cec-4ba8-bc6c-b05d98d7cc29",
+        "d4bc1832-01d8-4124-ac67-aad75831280c",
+        "33666387-0365-48cf-80e7-7db64165e41b",
+        "754df36d-39af-4ba8-af7d-7346f910d548",
+        "b2f3df54-a13f-4a5d-bdeb-e63f1592fde8"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "heading": "<p>What <em><strong>our customers<\/strong><\/em><\/p><p>have to say.<\/p>"
+      }
+    },
+    "30b31562-e012-4055-b8fd-9c5b59261445": {
+      "type": "featured-logos",
+      "blocks": {
+        "37394350-984b-43bf-8f5b-e466aeeffbf1": {
+          "type": "logo",
+          "settings": {
+            "width_mobile": 105,
+            "width_desktop": 130,
+            "image": "shopify:\/\/shop_images\/forbes.png",
+            "link": "https:\/\/www.forbes.com"
+          }
+        },
+        "cfb3c0fb-1649-4f30-a3bf-0c5743dd143e": {
+          "type": "logo",
+          "settings": {
+            "width_mobile": 60,
+            "width_desktop": 75,
+            "image": "shopify:\/\/shop_images\/clnet.png",
+            "link": "https:\/\/www.cnet.com\/"
+          }
+        },
+        "0ece05d0-8f0e-4350-92a8-6642df6d8049": {
+          "type": "logo",
+          "settings": {
+            "width_mobile": 120,
+            "width_desktop": 150,
+            "image": "shopify:\/\/shop_images\/yahoo.png",
+            "link": "https:\/\/www.yahoo.com"
+          }
+        }
+      },
+      "block_order": [
+        "37394350-984b-43bf-8f5b-e466aeeffbf1",
+        "cfb3c0fb-1649-4f30-a3bf-0c5743dd143e",
+        "0ece05d0-8f0e-4350-92a8-6642df6d8049"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": false,
+        "add_bottom_space": true,
+        "heading": "As <em><strong>featured<\/strong><\/em> on:"
+      }
+    },
+    "b84ee78d-02db-4387-8456-fcc87887b3cb": {
+      "type": "hero",
+      "settings": {
+        "enable_animation": true,
+        "animation_type": "bottom",
+        "type": "secondary",
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/bottom-hero-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/bottom-hero-mobile.png",
+        "heading": "<p>Have <em><strong>questions?<\/strong><\/em><br\/>            We hear you.<\/p>",
+        "subheading": "Schedule a free 15-minute consultation with one of our hearing specialists to discuss your needs and talk through recommendations.",
+        "button_1_text": "Book Your FREE Consulation",
+        "button_1_link": "shopify:\/\/collections",
+        "button_1_type": "primary",
+        "button_2_text": "View FAQs",
+        "button_2_link": "shopify:\/\/collections",
+        "button_2_type": "primary"
+      }
+    }
+  },
+  "order": [
+    "f11ee01b-9ab3-4eb5-ba4b-857e4496b7ec",
+    "7bdb87d0-9664-4b6f-941e-d097880ae1de",
+    "ca48b3b5-239d-4cef-a9fb-c0a43987aa94",
+    "cd4e9215-9838-42f0-bdc9-1429efc9e661",
+    "a0a513c1-940e-4d5f-a651-2074a97d0714",
+    "57e1a623-7c30-4936-8d12-a85ad613063a",
+    "7f781287-7770-4d4e-9ea2-64d3a8c7c673",
+    "30b31562-e012-4055-b8fd-9c5b59261445",
+    "b84ee78d-02db-4387-8456-fcc87887b3cb"
+  ]
+}

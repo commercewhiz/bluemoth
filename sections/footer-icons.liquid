@@ -1,0 +1,122 @@
+<div class="footer-icons{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="container">
+    <div class="footer-icons__inner flex fdc fw">
+      {%- for block in section.blocks -%}
+        {%- assign mod_block = block.settings -%}
+        <div class="footer-icon flex aic w1 jcb mxa">
+          <div class="footer-icon__icon c-lemon">
+            {%- liquid
+              if mod_block.icon_image != blank
+                render 'image', image: mod_block.icon_image, sizes: '30px', container: true
+              elsif mod_block.icon_svg != blank
+                echo mod_block.icon_svg
+              else
+                render 'icon-shield'
+              endif
+            -%}
+          </div>
+          <div class="footer-icon__content">
+            {%- if mod_block.heading != blank -%}
+              <div class="footer-icon__heading utility1 text-bold">
+                {{- mod_block.heading -}}
+              </div>
+            {%- endif -%}
+            {%- if mod_block.subheading != blank -%}
+              <div class="footer-icon__subheading">
+                {{- mod_block.subheading -}}
+              </div>
+            {%- endif -%}
+            {%- if mod_block.link_url != blank and mod_block.link_text != blank -%}
+              <a href="{{ mod_block.link_url }}" class="link footer-icon__link link-with-icon small-hide">
+                <span class="text">
+                  {{- mod_block.link_text -}}
+                </span>
+                {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+              </a>
+            {%- endif -%}
+          </div>
+          {%- if mod_block.link_url != blank and mod_block.link_text != blank -%}
+            <a
+              href="{{ mod_block.link_url }}"
+              class="link footer-icon__link-wrapper flex aic jcc center medium-hide large-up-hide"
+            >
+              {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- unless forloop.last -%}
+          <div class="content-divider mxa medium-hide large-up-hide">&nbsp;</div>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+    <div class="content-divider mxa">&nbsp;</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.footer-icons.name",
+  "class": "bg-black c-white",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "t:sections.footer-icons.blocks.item.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.footer-icons.blocks.item.settings.header__icon.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "t:sections.footer-icons.blocks.item.settings.icon_image.label",
+          "info": "t:sections.footer-icons.blocks.item.settings.icon_image.info"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "t:sections.footer-icons.blocks.item.settings.icon_svg.label",
+          "info": "t:sections.footer-icons.blocks.item.settings.icon_svg.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer-icons.blocks.item.settings.header__content.content"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.footer-icons.blocks.item.settings.heading.label",
+          "default": "3 year warranty"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "t:sections.footer-icons.blocks.item.settings.subheading.label",
+          "default": "On all tech"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer-icons.blocks.item.settings.header__link.content"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "t:sections.footer-icons.blocks.item.settings.link_text.label",
+          "default": "View Warranty Details"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "t:sections.footer-icons.blocks.item.settings.link_url.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.footer-icons.presets.name"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color": "#000000",
+        "background_color": "#f2f2f2",
+        "title": "",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "faqs_gDwTMY": {
+      "type": "faqs",
+      "blocks": {
+        "text_eQwUzr": {
+          "type": "text",
+          "settings": {
+            "title": "What if it gets water damage?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+          }
+        },
+        "text_YFXdpH": {
+          "type": "text",
+          "settings": {
+            "title": "What if I loose my device?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+          }
+        },
+        "text_QTPzgr": {
+          "type": "text",
+          "settings": {
+            "title": "This is a question right here?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+          }
+        },
+        "text_gXRACJ": {
+          "type": "text",
+          "settings": {
+            "title": "This is a question right here?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+          }
+        },
+        "text_pUbPeh": {
+          "type": "text",
+          "settings": {
+            "title": "This is a question right here?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+          }
+        },
+        "text_XJmpxF": {
+          "type": "text",
+          "settings": {
+            "title": "This is a question right here?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_eQwUzr",
+        "text_YFXdpH",
+        "text_QTPzgr",
+        "text_gXRACJ",
+        "text_pUbPeh",
+        "text_XJmpxF"
+      ],
+      "settings": {
+        "color": "#000000",
+        "background_color": "#f2f2f2",
+        "title": "FAQs",
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_RzABEc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hmDVg8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need help?",
+            "heading_size": "h3 h3-small"
+          }
+        },
+        "text_Bhnihg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.<\/p>"
+          }
+        },
+        "button_bwVJG8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact BlueMoth",
+            "button_link": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hmDVg8",
+        "text_Bhnihg",
+        "button_bwVJG8"
+      ],
+      "settings": {
+        "color": "#000000",
+        "background_color": "#f2f2f2",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 116,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faqs_gDwTMY",
+    "rich_text_RzABEc"
+  ]
+}

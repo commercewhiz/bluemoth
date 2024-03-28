@@ -1,0 +1,128 @@
+.blog-head {
+  --inputs-radius: 5rem;
+  --inputs-border-width: 0px;
+  --inputs-border-opacity: 0;
+  --input-background: var(--color-white);
+  --inputs-height: 4.8rem;
+  --input-font-weight: 600;
+  --input-label-color: var(--color-black);
+}
+
+.main-blog__inner {
+  padding-top: 5.5rem;
+  padding-bottom: 6rem;
+}
+
+.blog-title {
+  margin-bottom: 3rem;
+}
+
+.blog-head {
+  padding-bottom: 3rem;
+}
+
+.blog-filter {
+  margin-bottom: 1rem;
+}
+
+.blog-search__form .field__input {
+  padding-left: 2.5rem;
+}
+
+.blog-search__form {
+  --field-label-focused-left: 2.5rem;
+  --field-label-left: 2.5rem;
+  --field-label-focused-font-size: 1.2rem;
+}
+
+.blog-search__form .field__button {
+  width: 5rem;
+  top: 0.2rem;
+}
+
+.blog-search__form .icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.blog-articles {
+  --grid-gap: 2rem;
+  --grid-column-count: 1;
+  gap: var(--grid-gap);
+}
+
+.blog-filter__buttons .button {
+  line-height: 1.6rem;
+}
+
+.blog-filter__buttons .button.active {
+  --button-background-color: var(--color-black);
+  --button-hover-background-color: var(--color-black);
+  --button-color: var(--color-white);
+  --button-hover-color: var(--color-white);
+}
+
+.blog-articles__empty {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 500px) {
+  .blog-articles {
+    --grid-column-count: 2;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .blog-title {
+    text-align: center;
+  }
+
+  .blog-head {
+    --button-padding: 1.5rem 3rem;
+  }
+
+  .blog-filter__buttons {
+    gap: 1rem;
+  }
+
+  .blog-search {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .main-blog__inner {
+    padding-top: 4rem;
+  }
+
+  .blog-title {
+    margin-bottom: 6rem;
+  }
+
+  .blog-head {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .blog-filter {
+    width: 66.66%;
+    margin-bottom: 0;
+  }
+
+  .blog-filter__buttons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .blog-search {
+    width: 33.33%;
+    max-width: 32.5rem;
+  }
+
+  .blog-articles {
+    --grid-column-count: 3;
+  }
+}

@@ -1,0 +1,214 @@
+{%- liquid
+  echo 'section-main-team.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+-%}
+
+<script src="{{ 'component-team-members.js' | asset_url }}" type="module"></script>
+
+<team-members
+  class="block main-team section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+    --section-modal-text-color: {{ mod_section.modal_color }};
+    --section-modal-background-color: {{ mod_section.modal_background_color }};
+  "
+>
+  <div class="container">
+    <div class="main-team__inner">
+      <div class="main-team__head flex fdc">
+        <h1 class="h3 h3-large text-pre main-team__title">
+          {{- mod_section.title -}}
+        </h1>
+        <div class="main-team__description">
+          {{ mod_section.description | newline_to_br }}
+        </div>
+      </div>
+
+      <div class="main-team__content flex fw">
+        {%- for block in section.blocks -%}
+          {%- assign mod_block = block.settings -%}
+          <div
+            class="team-member block w1
+              {% if settings.animations_reveal_on_scroll %}
+                scroll-trigger animate--slide-in
+              {% endif %}
+            "
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          >
+            <div class="team-member__inner">
+              <div class="team-member__photo">
+                {%- render 'image',
+                  image: mod_block.photo,
+                  sizes: '50vw, (max-width: 750px) 100vw',
+                  width: 150,
+                  container: true,
+                  container_class: 'img--rounded'
+                -%}
+              </div>
+              <div class="team-member__content">
+                {%- if mod_block.title != blank -%}
+                  <h2 class="team-member__name h3">
+                    {{- mod_block.title -}}
+                  </h2>
+                {%- endif -%}
+                {%- if mod_block.role != blank -%}
+                  <div class="team-member__role">
+                    {{ mod_block.role }}
+                  </div>
+                {%- endif -%}
+                {%- if mod_block.button_text != blank -%}
+                  <button class="team-member__button link-with-icon button button--primary js-modal-trigger" data-index="{{ forloop.index }}">
+                    <span class="text">{{- mod_block.button_text -}}</span>
+                    {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                  </button>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- assign mod_block = block.settings -%}
+        <div class="team-modal js-modal" data-index="{{ forloop.index }}">
+          <div class="team-modal__inner relative w1">
+            <button
+              class="team-modal__close button button--tertiary js-modal-close"
+              aria-label="{{ 'accessibility.close' | t }}"
+            >
+              {%- render 'icon-close', class: 'block w1 ha' -%}
+            </button>
+
+            <div class="team-modal__wrapper container">
+              <div class="team-modal__image">
+                {%- render 'image',
+                  image: mod_block.photo,
+                  sizes: '50vw, (max-width: 750px) 100vw',
+                  width: 150,
+                  container: true,
+                  container_class: 'img--rounded'
+                -%}
+              </div>
+              <div class="team-modal__content">
+                <h2 class="team-modal__title h3 h3-small">
+                  {{- mod_block.title -}}
+                </h2>
+                <div class="team-modal__role">
+                  {{- mod_block.role -}}
+                </div>
+                <div class="team-modal__description">
+                  {{- mod_block.description -}}
+                </div>
+                <div class="team-modal__quote h3">
+                  <span class="team-modal__quote-icon">
+                    {%- render 'icon' with 'quote' -%}
+                  </span>
+                  <div class="team-modal__quote-text">
+                    {{- mod_block.quote -}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</team-members>
+{% schema %}
+{
+  "name": "t:sections.main-team.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-team.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.main-team.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.main-team.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-team.settings.header__modal_style.content"
+    },
+    {
+      "type": "color",
+      "id": "modal_color",
+      "label": "t:sections.main-team.settings.modal_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "modal_background_color",
+      "label": "t:sections.main-team.settings.modal_background_color.label",
+      "default": "#A5CCFB"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-team.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:sections.main-team.settings.title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "t:sections.main-team.settings.description.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "member",
+      "name": "t:sections.main-team.blocks.member.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.main-team.blocks.member.settings.title.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "t:sections.main-team.blocks.member.settings.photo.label"
+        },
+        {
+          "type": "richtext",
+          "id": "role",
+          "label": "t:sections.main-team.blocks.member.settings.role.label"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:sections.main-team.blocks.member.settings.description.label"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "t:sections.main-team.blocks.member.settings.quote.label"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.main-team.blocks.member.settings.button_text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.main-team.presets.name"
+    }
+  ]
+}
+{% endschema %}

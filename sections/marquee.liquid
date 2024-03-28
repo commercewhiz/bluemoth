@@ -1,0 +1,121 @@
+{%- liquid
+  assign mod_section = section.settings
+
+  assign background_color = mod_section.marquee_background_color
+  assign text_color = mod_section.marquee_text_color
+
+  assign mod_repeat_inner = 1
+  if mod_section.marquee_repeat
+    assign mod_repeat_inner = 2
+  endif
+-%}
+
+<div class="marquee section-inner"
+  style="
+    --section-text-color: {{ text_color }};
+    --section-background-color: {{ background_color }};
+    --marquee-background-color: {{ background_color }};
+    --marquee-text-color: {{ text_color }};
+  "
+>
+  {%- render 'ticker',
+    mod_text: mod_section.marquee_text,
+    mod_repeat: mod_section.marquee_repeat,
+    mod_animate: mod_section.marquee_animate,
+    mod_animate_speed: mod_section.marquee_animate_speed,
+    mod_scroll_direction: mod_section.marquee_scroll_direction,
+    mod_interpunct: mod_section.marquee_interpunct
+    mod_repeat_inner: mod_repeat_inner
+  -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.marquee.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.marquee.settings.header__text.content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "marquee_text",
+      "label": "t:sections.marquee.settings.marquee_text.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "marquee_repeat",
+      "label": "t:sections.marquee.settings.marquee_repeat.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "marquee_interpunct",
+      "label": "t:sections.marquee.settings.marquee_interpunct.label",
+      "info": "t:sections.marquee.settings.marquee_interpunct.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.marquee.settings.header__animation.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.marquee.settings.paragraph__animation.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "marquee_animate",
+      "label": "t:sections.marquee.settings.marquee_animate.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "marquee_animate_speed",
+      "label": "t:sections.marquee.settings.marquee_animate_speed.label",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "s",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "marquee_scroll_direction",
+      "options": [
+        {
+          "value": "rtl",
+          "label": "t:sections.marquee.settings.marquee_scroll_direction.options__rtl.label"
+        },
+        {
+          "value": "ltr",
+          "label": "t:sections.marquee.settings.marquee_scroll_direction.options__ltr.label"
+        }
+      ],
+      "default": "rtl",
+      "label": "t:sections.marquee.settings.marquee_scroll_direction.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.marquee.settings.header__color.content"
+    },
+    {
+      "type": "color",
+      "id": "marquee_background_color",
+      "label": "t:sections.marquee.settings.marquee_background_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "marquee_text_color",
+      "label": "t:sections.marquee.settings.marquee_text_color.label",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.marquee.presets.name"
+    }
+  ]
+}
+{% endschema %}

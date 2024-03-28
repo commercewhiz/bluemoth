@@ -1,0 +1,209 @@
+{%- liquid
+  echo 'section-how-works.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="how-works"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+    --section-top-color: {{ mod_section.top_color }};
+  "
+>
+  <div class="how-works__inner">
+    <div class="container">
+      <div class="how-works__top relative">
+        <div class="how-works__top-image relative">
+          {%- liquid
+            assign mobile_image_class = 'medium-hide large-up-hide'
+            assign desktop_image_class = ''
+            if mod_section.top_mobile_image != blank
+              assign desktop_image_class = 'small-hide'
+            endif
+            if mod_section.add_border_round
+              assign mobile_image_class = mobile_image_class | append: ' img--rounded'
+              assign desktop_image_class = desktop_image_class | append: ' img--rounded'
+            endif
+          -%}
+          {%- if mod_section.top_mobile_image != blank -%}
+            {%- render 'image',
+              image: mod_section.top_mobile_image,
+              sizes: '100vw',
+              container: true,
+              container_class: mobile_image_class
+            -%}
+          {%- endif -%}
+
+          {%- if mod_section.top_image != blank -%}
+            {%- render 'image',
+              image: mod_section.top_image,
+              sizes: '100vw',
+              container: true,
+              container_class: desktop_image_class
+            -%}
+          {%- endif -%}
+        </div>
+        <div class="how-works__top-content fill flex aic jcc center">
+          <div class="how-works__top-content__inner">
+            {%- if mod_section.heading != blank -%}
+              <h2 class="how-works__top-title">{{ mod_section.heading }}</h2>
+            {%- endif -%}
+
+            {%- if mod_section.subheading != blank -%}
+              <p class="how-works__top-subtitle mxa utility2">{{ mod_section.subheading }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+      <div class="how-works__bottom center">
+        {%- if mod_section.bottom_heading != blank -%}
+          <h3 class="how-works__bottom-title">
+            {{- mod_section.bottom_heading -}}
+          </h3>
+        {%- endif -%}
+
+        <div class="how-works__bottom-items flex fdc jcb">
+          {%- for block in section.blocks -%}
+            {%- assign mod_block = block.settings -%}
+            <div class="how-works__bottom-item">
+              {%- if mod_block.title != blank -%}
+                <div class="how-works__bottom-item__title text-bold utility1">
+                  {{ mod_block.title }}
+                </div>
+              {%- endif -%}
+              {%- if mod_block.description != blank -%}
+                <div class="how-works__bottom-item__description">
+                  {{ mod_block.description }}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if mod_section.button_link != blank and mod_section.button_text != blank -%}
+          <div class="how-works__bottom-actions">
+            <a
+              href="{{ mod_section.button_link }}"
+              class="how-works__bottom-link link-with-icon button button--{{ mod_section.button_type }}"
+            >
+              <span class="text">{{- mod_section.button_text -}}</span>
+              {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.how-works.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.how-works.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.how-works.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.how-works.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.how-works.settings.header__top.content"
+    },
+    {
+      "type": "color",
+      "id": "top_color",
+      "label": "t:sections.how-works.settings.top_color.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_image",
+      "label": "t:sections.how-works.settings.top_image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_mobile_image",
+      "label": "t:sections.how-works.settings.top_mobile_image.label",
+      "info": "t:sections.how-works.settings.top_mobile_image.info"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:sections.how-works.settings.heading.label"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "t:sections.how-works.settings.subheading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.how-works.settings.header__bottom.content"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_heading",
+      "label": "t:sections.how-works.settings.bottom_heading.label"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.how-works.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.how-works.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "t:sections.how-works.settings.button_type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.how-works.settings.button_type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.how-works.settings.button_type.options__2.label"
+        }
+      ],
+      "default": "primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "t:sections.how-works.blocks.step.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.how-works.blocks.step.settings.title.label"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "t:sections.how-works.blocks.step.settings.description.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.how-works.presets.name"
+    }
+  ]
+}
+{% endschema %}

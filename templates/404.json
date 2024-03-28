@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "color": "#000000",
+        "background_color": "#F2F2F2",
+        "subtitle": "Return to <a href=\"#previous-page\" title=\"Previous Page\">the previous page<\/a> or go back to our <a href=\"\/\" title=\"\/\">homepage<\/a>."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,138 @@
+{%- liquid
+  echo 'component-article-card.css' | asset_url | stylesheet_tag
+  echo 'section-main-blog.css' | asset_url | stylesheet_tag
+
+  assign article_per_page = 7
+  capture searched_string
+    render 'get-parameter', mod_param: 'q'
+  endcapture
+-%}
+
+<script src="{{ 'section-main-blog.js' | asset_url }}" type="module"></script>
+
+{%- paginate blog.articles by article_per_page -%}
+  <div class="main-blog bg-grey-2">
+    <div class="main-blog__inner">
+      <div class="container">
+        <h1 class="blog-title h3 h3-large{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+          {{ blog.title | escape }}
+        </h1>
+
+        <div class="blog-head">
+          <blog-filter class="blog-filter block">
+            <div class="select blog-filter__select medium-hide large-up-hide">
+              <select
+                class="facet-filters__sort select__select caption-large js-select"
+                id="FilterBy"
+                aria-describedby="a11y-refresh-page-message"
+              >
+                <option
+                  value="{{ blog.url }}"
+                  {% if current_tags == blank %}
+                    selected
+                  {% endif %}
+                >
+                  {{- 'blogs.all_posts' | t -}}
+                </option>
+                {%- for tag in blog.all_tags -%}
+                  <option
+                    value="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                    {% if current_tags contains tag %}
+                      selected
+                    {% endif %}
+                  >
+                    {{- tag | escape -}}
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+
+            <div class="blog-filter__buttons flex jcc small-hide">
+              <a
+                href="{{ blog.url }}"
+                class="button button--primary{% if current_tags == blank %} active{% endif %}"
+              >
+                {{- 'blogs.all_posts' | t -}}
+              </a>
+
+              {%- for tag in blog.all_tags -%}
+                <a
+                  href="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                  class="button button--primary{% if current_tags contains tag %} active{% endif %}"
+                >
+                  {{ tag | escape }}
+                </a>
+              {%- endfor -%}
+            </div>
+          </blog-filter>
+
+          <blog-search class="blog-search block">
+            <form class="blog-search__form js-blog-search-form">
+              <div class="field">
+                <input
+                  class="search__input field__input js-search-input"
+                  id="blog-search"
+                  type="search"
+                  name="q"
+                  value="{{ searched_string }}"
+                  placeholder="{{ 'general.search.search' | t }}"
+                >
+                <label class="field__label" for="blog-search">{{ 'general.search.search' | t }}</label>
+                <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                  <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                    <use href="#icon-search">
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </blog-search>
+        </div>
+
+        <div class="blog-articles js-article-items flex fw">
+          {%- liquid
+            for article in blog.articles
+              assign card_class = ''
+              if forloop.first
+                assign card_class = 'article-card--large'
+              endif
+              if settings.animations_reveal_on_scroll
+                assign card_class = card_class | append: ' scroll-trigger animate--slide-in'
+              endif
+              assign card_animation_order = forloop.index
+
+              unless searched_string == blank or article.title contains searched_string
+                assign card_class = card_class | append: ' hidden'
+              endunless
+
+              render 'article-card', mod_article: article, class: card_class, animation_order: card_animation_order
+            endfor
+          -%}
+        </div>
+
+        <div
+          class="blog-articles__empty center js-article-empty
+            {% if blog.articles.size > 0 %}
+              hidden
+            {% endif %}
+          "
+        >
+          {{- 'blogs.no_posts_found' | t -}}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "settings": [
+  ]
+}
+{% endschema %}

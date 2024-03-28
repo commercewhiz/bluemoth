@@ -1,0 +1,131 @@
+{
+  "sections": {
+    "cart": {
+      "type": "main-cart",
+      "blocks": {
+        "cc4e1107-1cdc-4711-b6f6-22d660b234e7": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Shop Pay",
+            "svg_html": ""
+          }
+        },
+        "4dbb63ca-5746-45c6-af8a-2fc5f57f2079": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Paypal",
+            "svg_html": ""
+          }
+        },
+        "562a6ba9-1d79-437f-b8bd-186d7e73a0e8": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Google Pay",
+            "svg_html": ""
+          }
+        },
+        "280bf347-d1b3-4603-8520-bd23732a1b61": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Mastercard",
+            "svg_html": ""
+          }
+        },
+        "6bfa498c-07f5-47e6-9b00-2a372a65ec4a": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Visa",
+            "svg_html": ""
+          }
+        },
+        "d6e615e2-db02-482a-8d34-4b7067443418": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Amex",
+            "svg_html": ""
+          }
+        },
+        "c0bf7a1a-a7b4-47b9-be82-963196169498": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Stripe",
+            "svg_html": ""
+          }
+        },
+        "376d7069-9fc6-4b74-8cd8-bd34cadee2b8": {
+          "type": "payment_icon",
+          "settings": {
+            "title": "Discover",
+            "svg_html": ""
+          }
+        }
+      },
+      "block_order": [
+        "cc4e1107-1cdc-4711-b6f6-22d660b234e7",
+        "4dbb63ca-5746-45c6-af8a-2fc5f57f2079",
+        "562a6ba9-1d79-437f-b8bd-186d7e73a0e8",
+        "280bf347-d1b3-4603-8520-bd23732a1b61",
+        "6bfa498c-07f5-47e6-9b00-2a372a65ec4a",
+        "d6e615e2-db02-482a-8d34-4b7067443418",
+        "c0bf7a1a-a7b4-47b9-be82-963196169498",
+        "376d7069-9fc6-4b74-8cd8-bd34cadee2b8"
+      ],
+      "settings": {
+        "color": "#000000",
+        "background_color": "#f2f2f2",
+        "payments_title": "We accept"
+      }
+    },
+    "6d3a16a5-63e2-4fc4-b05f-c9097c32599b": {
+      "type": "recommended-products",
+      "settings": {
+        "enable_animation": true,
+        "color": "",
+        "background_color": "#f2f2f2",
+        "heading": "Extend the <em><strong>Widex Moment<\/strong><\/em>",
+        "fallback_collection": "frontpage"
+      }
+    },
+    "19e141ce-4faf-49fa-ace3-53cd16353bda": {
+      "type": "image-with-text",
+      "blocks": {
+        "5c781168-137e-4ce6-83c1-bcd3c90d679d": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>We know a lot. But,<br\/>            <em><strong>you know you best.<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "View Experience Box",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "secondary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "0b58941b-20a6-4ca0-b184-31e8fe9f7221": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Collection-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "5c781168-137e-4ce6-83c1-bcd3c90d679d",
+        "0b58941b-20a6-4ca0-b184-31e8fe9f7221"
+      ],
+      "settings": {
+        "title": "",
+        "color": "",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true
+      }
+    }
+  },
+  "order": [
+    "cart",
+    "6d3a16a5-63e2-4fc4-b05f-c9097c32599b",
+    "19e141ce-4faf-49fa-ace3-53cd16353bda"
+  ]
+}

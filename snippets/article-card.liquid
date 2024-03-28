@@ -1,0 +1,58 @@
+<div
+  class="article-card{% if class != blank %} {{ class }}{% endif %}"
+  {% if animation_order != blank %}
+    data-cascade
+    style="--animation-order: {{ animation_order }};"
+  {% endif %}
+>
+  <div class="article-card__image overflow-hidden relative">
+    {%- render 'image',
+      image: mod_article.image,
+      sizes: '100vw',
+      width: 150,
+      class: 'block w1 ha'
+    -%}
+    {%- if mod_article.tags != blank -%}
+      <div class="article-card__tags flex fw">
+        {%- for tag in mod_article.tags -%}
+          <span class="article-card__tag text-bold small inline-block">{{ tag }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <a href="{{ mod_article.url }}" class="fill">&nbsp;</a>
+  </div>
+
+  <div class="article-card__content flex fdc jcb">
+    {%- if mod_article.tags != blank -%}
+      <div class="article-card__content-tags flex fw">
+        {%- for tag in mod_article.tags -%}
+          <span class="article-card__tag text-bold small inline-block">{{ tag }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <a
+      href="{{ mod_article.url }}"
+      class="h2 article-card__title utility6-large text-body
+        {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}
+      "
+    >
+      {{- mod_article.title -}}
+    </a>
+
+    <div class="article-card__detail-wrapper">
+      <div class="article-card__detail">
+        {%- if mod_article.excerpt.size > 0 -%}
+          {{ mod_article.excerpt | strip_html | truncatewords: 30 }}
+        {%- else -%}
+          {{ mod_article.content | strip_html | truncatewords: 30 }}
+        {%- endif -%}
+      </div>
+
+      <div class="article-card__date c-grey-5 utility3-small" itemprop="dateCreated pubdate datePublished">
+        {{- mod_article.published_at | time_tag: '%b %e, %Y' -}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-reviews-carousel.css'
+  assign mod_section = section.settings
+-%}
+
+<script src="{{ 'component-review-carousel.js' | asset_url }}" type="module"></script>
+
+<div
+  class="reviews-carousel
+    {% if mod_section.add_top_space %}
+      reviews-carousel--has-top
+    {% endif %}
+    {% if mod_section.add_bottom_space %}
+      reviews-carousel--has-bottom
+    {% endif %}
+  "
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="reviews-carousel__inner
+    {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+      scroll-trigger animate--slide-in
+    {% endif %}
+  ">
+    {%- if mod_section.heading != blank -%}
+      <h2 class="reviews-carousel__title h3 center">
+        {{- mod_section.heading -}}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <reviews-carousel class="swiper block reviews-carousel__slider">
+        <div class="js-slider">
+          <div class="swiper-wrapper reviews-carousel__items flex">
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign mod_block = block.settings
+                assign mod_product = mod_block.product
+                assign first_image = mod_product.featured_image
+              -%}
+              {%- if mod_product != blank -%}
+                <div
+                  class="review-item swiper-slide"
+                  style="
+                    --content-background: {{ mod_block.content_background }};
+                    --content-product-color: {{ mod_block.product_color }};
+                    --content-product-background: {{ mod_block.product_background }};
+                  "
+                >
+                  <div class="review-item__wrapper">
+                    <div class="review-item__ratings flex aic">
+                      {%- liquid
+                        assign rating_decimal = 0
+                        assign remains = mod_block.review_score | modulo: 1
+                        assign decimal_score = mod_block.review_score | minus: remains
+                        for i in (1..5)
+                          if i <= decimal_score
+                            render 'icon-star', type: 'full'
+                          elsif remains > 0
+                            render 'icon-star', type: 'half'
+                            assign remains = 0
+                          else
+                            render 'icon-star', type: 'empty'
+                          endif
+                        endfor
+                      -%}
+                    </div>
+                    <div class="review-item__content utility6">
+                      {{ mod_block.content }}
+                    </div>
+                    <div class="review-item__customer text-bold">
+                      {{ mod_block.customer_name }}
+                    </div>
+                  </div>
+                  <div class="review-item__product flex aic relative">
+                    <div class="review-product__image">
+                      {%- if first_image != blank -%}
+                        {%- render 'image',
+                          image: first_image,
+                          sizes: '100vw',
+                          container: true,
+                          image_aspect_ratio: 1
+                        -%}
+                      {%- endif -%}
+                    </div>
+
+                    <div class="review-product__detail">
+                      <div class="review-product__title utility4 text-bold">
+                        {{ mod_product.title }}
+                      </div>
+                      <div class="review-product__description utility3">
+                        {{ mod_product.description }}
+                      </div>
+                    </div>
+
+                    <a
+                      href="{{ mod_product.url }}"
+                      class="review-product__overlay fill"
+                      aria-label="{{ mod_product.title }}"
+                    >&nbsp;</a>
+
+                    <a href="{{ mod_product.url }}" class="review-product__link small-hide link relative">
+                      {%- render 'icon-arrow-top-right', type: 'rounded', class: 'block w1 ha' -%}
+                    </a>
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="reviews-carousel__arrows">
+            <button class="reviews-carousel__arrow reviews-carousel__arrow-prev small-hide js-prev">
+              {%- render 'icon-arrow-long', type: 'left' -%}
+            </button>
+            <button class="reviews-carousel__arrow reviews-carousel__arrow-next small-hide js-next">
+              {%- render 'icon-arrow-long', type: 'right' -%}
+            </button>
+          </div>
+        </div>
+      </reviews-carousel>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.reviews-carousel.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.reviews-carousel.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.reviews-carousel.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.reviews-carousel.settings.color.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.reviews-carousel.settings.background_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_top_space",
+      "label": "t:sections.reviews-carousel.settings.add_top_space.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "add_bottom_space",
+      "label": "t:sections.reviews-carousel.settings.add_bottom_space.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.reviews-carousel.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:sections.reviews-carousel.settings.heading.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_item",
+      "name": "t:sections.reviews-carousel.blocks.review_item.name",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.reviews-carousel.blocks.review_item.settings.header__style.content"
+        },
+        {
+          "type": "color",
+          "id": "content_background",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.content_background.label",
+          "default": "#131313"
+        },
+        {
+          "type": "color",
+          "id": "product_color",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.product_color.label",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "product_background",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.product_background.label",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "review_score",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.review_score.label",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "★",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.content.label"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.customer_name.label"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.reviews-carousel.blocks.review_item.settings.product.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.reviews-carousel.presets.name"
+    }
+  ]
+}
+{% endschema %}

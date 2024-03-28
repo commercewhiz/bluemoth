@@ -1,0 +1,99 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'component-article-card.css'
+  render 'async-stylesheet', mod_url: 'section-related-articles.css'
+  assign mod_section = section.settings
+  assign articles_limit = mod_section.limit_count
+-%}
+
+<script src="{{ 'component-card-carousel.js' | asset_url }}" type="module" defer></script>
+
+<div
+  class="related-articles section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="container">
+    <div class="related-articles__inner">
+      <h2 class="related-articles__head h3 h3-small">
+        {{- mod_section.heading -}}
+      </h2>
+      <div class="related-articles__content">
+        <card-carousel class="swiper block" data-breakpoint="(max-width: 990px)">
+          <div class="js-slider">
+            <div class="swiper-wrapper card-grid flex">
+              {%- for recent_article in blog.articles -%}
+                {%- liquid
+                  if recent_article.handle == article.handle
+                    continue
+                  endif
+
+                  if articles_limit == 0
+                    break
+                  endif
+                  assign articles_limit = articles_limit | minus: 1
+
+                  render 'article-card', mod_article: recent_article, class: 'swiper-slide'
+                -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </card-carousel>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.related-articles.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_animation",
+        "label": "t:sections.related-articles.settings.enable_animation.label",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:sections.related-articles.settings.header__style.content"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "t:sections.related-articles.settings.color.label"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "t:sections.related-articles.settings.background_color.label",
+        "default": "#F2F2F2"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.related-articles.settings.header__heading.content"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "label": "t:sections.related-articles.settings.heading.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.related-articles.settings.header__content.content"
+      },
+      {
+        "type": "number",
+        "id": "limit_count",
+        "label": "t:sections.related-articles.settings.limit_count.label",
+        "default": 3
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.related-articles.presets.name"
+      }
+    ]
+  }
+{% endschema %}

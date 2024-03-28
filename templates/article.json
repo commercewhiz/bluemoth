@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+      }
+    },
+    "f03a1991-01e8-4ca4-a33c-2967c48cd49f": {
+      "type": "image-banner",
+      "settings": {
+        "enable_animation": true,
+        "width_type": "container",
+        "color": "#ffffff",
+        "background_color": "#ffffff",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "image": "shopify:\/\/shop_images\/image-banner-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/image-banner-mobile.png",
+        "add_border_round": true,
+        "enable_overlay": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 55,
+        "desktop_max_width": 630,
+        "heading": "<p>Schedule a <em><strong>free<\/strong><\/em><br\/> 15-min consultation<\/p>",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n ut labore et dolore.",
+        "button_text": "Help Me Choose",
+        "button_link": "shopify:\/\/collections\/frontpage",
+        "button_type": "primary"
+      }
+    },
+    "30e980b4-e074-403e-a0a4-6b57480920cc": {
+      "type": "related-article",
+      "settings": {
+        "enable_animation": true,
+        "color": "",
+        "background_color": "#F2F2F2",
+        "heading": "Related <em><strong>Articles<\/strong><\/em>",
+        "limit_count": 3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f03a1991-01e8-4ca4-a33c-2967c48cd49f",
+    "30e980b4-e074-403e-a0a4-6b57480920cc"
+  ]
+}

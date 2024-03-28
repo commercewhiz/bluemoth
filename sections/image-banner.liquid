@@ -1,0 +1,276 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-image-banner.css'
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="image-banner
+    section-inner
+    {% if mod_section.add_top_space %}
+      image-banner--has-top
+    {% endif %}
+    {% if mod_section.add_bottom_space %}
+      image-banner--has-bottom
+    {% endif %}
+    {% if mod_section.add_border_round %}
+      image-banner--rounded
+    {% endif %}
+  "
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+    --section-overlay-color: {{ mod_section.overlay_color }};
+    --section-overlay-opacity: {{ mod_section.overlay_opacity }};
+    {% if mod_section.desktop_max_width != blank %}
+      --section-content-max-width: {{ mod_section.desktop_max_width }}px;
+    {% endif %}
+  "
+>
+  {%- if mod_section.width_type == 'container' -%}
+    <div class="container">
+  {%- endif -%}
+
+    <div
+      class="image-banner__inner relative
+        {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+          scroll-trigger animate--slide-in
+        {% endif %}
+      "
+    >
+      <div class="image-banner__image relative">
+        {%- liquid
+          assign desktop_image_class = ''
+          assign mobile_image_class = 'medium-hide large-up-hide'
+          if mod_section.add_border_round
+            assign desktop_image_class = 'img--rounded'
+            assign mobile_image_class = mobile_image_class | append: ' img--rounded'
+          endif
+          if mod_section.mobile_image != blank
+            assign desktop_image_class = desktop_image_class | append: ' small-hide'
+          endif
+
+          if mod_section.mobile_image != blank
+            render 'image', image: mod_section.mobile_image, sizes: '100vw', container: true, container_class: mobile_image_class
+          endif
+
+          if mod_section.image != blank
+            render 'image', image: mod_section.image, sizes: '100vw', container: true, container_class: desktop_image_class
+          endif
+        -%}
+      </div>
+
+      <div class="image-banner__overlay fill">&nbsp;</div>
+
+      <div class="image-banner__wrapper fill flex aic jcc center">
+        <div class="image-banner__content center w1">
+          <div class="image-banner__content-inner">
+            {%- if mod_section.heading != blank -%}
+              <h2 class="image-banner__title h3">
+                {{- mod_section.heading | newline_to_br -}}
+              </h2>
+            {%- endif -%}
+            {%- if mod_section.content != blank -%}
+              <div class="image-banner__detail">
+                {{- mod_section.content -}}
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="image-banner__actions flex aic jcc">
+            {%- if mod_section.button_link != blank and mod_section.button_text != blank -%}
+              <a
+                href="{{ mod_section.button_link }}"
+                class="image-banner__link link-with-icon button button--{{ mod_section.button_type }}"
+              >
+                <span class="text">{{- mod_section.button_text -}}</span>
+                {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {%- if mod_section.width_type == 'container' -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image-banner.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.image-with-text.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.header__style.content"
+    },
+    {
+      "type": "select",
+      "id": "width_type",
+      "label": "t:sections.image-banner.settings.width_type.label",
+      "options": [
+        {
+          "value": "container",
+          "label": "t:sections.image-banner.settings.width_type.options__1.label"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.image-banner.settings.width_type.options__2.label"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.image-banner.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.image-banner.settings.background_color.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_top_space",
+      "label": "t:sections.image-banner.settings.add_top_space.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "add_bottom_space",
+      "label": "t:sections.image-banner.settings.add_bottom_space.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.header__image.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-banner.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.image-banner.settings.mobile_image.label",
+      "info": "t:sections.image-banner.settings.mobile_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_border_round",
+      "label": "t:sections.image-with-text.blocks.stack_image.settings.add_border_round.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.header__overlay.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "t:sections.image-banner.settings.enable_overlay.label",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:sections.image-banner.settings.overlay_color.label",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:sections.image-banner.settings.overlay_opacity.label",
+      "info": "t:sections.image-banner.settings.overlay_opacity.info",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default":0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.header__content.content"
+    },
+    {
+      "type": "number",
+      "id": "desktop_max_width",
+      "label": "t:sections.image-banner.settings.desktop_max_width.label",
+      "info": "t:sections.image-banner.settings.desktop_max_width.info"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:sections.image-banner.settings.heading.label"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "t:sections.image-banner.settings.content.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.header__button.content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.image-banner.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.image-banner.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "t:sections.image-banner.settings.button_type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.image-banner.settings.button_type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.image-banner.settings.button_type.options__2.label"
+        }
+      ],
+      "default": "primary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "enable_animation": true,
+        "width_type": "container",
+        "color": "#ffffff",
+        "background_color": "#ffffff",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "image": "shopify:\/\/shop_images\/image-banner-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/image-banner-mobile.png",
+        "add_border_round": true,
+        "enable_overlay": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 55,
+        "desktop_max_width": 630,
+        "heading": "<p>Schedule a <em><strong>free<\/strong><\/em><br\/> 15-min consultation<\/p>",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n ut labore et dolore.",
+        "button_text": "Help Me Choose",
+        "button_link": "shopify:\/\/collections\/frontpage",
+        "button_type": "primary"
+      }
+    }
+  ]
+}
+{% endschema %}

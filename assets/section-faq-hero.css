@@ -1,0 +1,43 @@
+.faq-hero__inner {
+  padding-top: 3.5rem;
+}
+
+.faq-hero__title p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.faq-hero__description {
+  margin-top: 2rem;
+  max-width: 66rem;
+}
+
+.faq-hero__buttons {
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.faq-hero__button {
+  max-width: 27rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 750px) {
+  .faq-hero__inner {
+    padding-top: 4.2rem;
+  }
+
+  .faq-hero__buttons {
+    margin-top: 3rem;
+    flex-direction: row;
+  }
+
+  .faq-hero__button {
+    width: auto;
+    max-width: none;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

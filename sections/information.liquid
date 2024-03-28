@@ -1,0 +1,133 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-information.css'
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="information section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="information-inner container">
+    <h2
+      class="h3 h3-small mx0 information-title
+        {% if settings.animations_reveal_on_scroll %}
+          scroll-trigger animate--slide-in
+        {% endif %}
+      "
+    >
+      {{- mod_section.title -}}
+    </h2>
+    <div class="information-content flex fw">
+      {%- for block in section.blocks -%}
+        {%- assign mod_block = block.settings -%}
+        <div
+          class="information-item
+            {% if settings.animations_reveal_on_scroll %}
+              scroll-trigger animate--slide-in
+            {% endif %}
+          "
+          data-cascade
+          style="--animation-order: {{ forloop.index }};"
+        >
+          {%- if mod_block.title != blank -%}
+            <div class="information-item__title utility1 text-bold">
+              {{- mod_block.title -}}
+            </div>
+          {%- endif -%}
+          {%- if mod_block.detail != blank -%}
+            <div class="information-item__detail">
+              {{- mod_block.detail -}}
+            </div>
+          {%- endif -%}
+
+          {%- if mod_block.button_link != blank and mod_block.button_text != blank -%}
+            <div class="information-item__actions">
+              <a
+                href="{{ mod_block.button_link }}"
+                class="information-item__button link-with-icon button button--tertiary"
+              >
+                <span class="text">{{- mod_block.button_text -}}</span>
+                {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.information.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:settings_schema.global.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings_schema.global.settings.color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings_schema.global.settings.background_color.label",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.information.settings.header__content.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.information.settings.title.label",
+      "default": "Helpful information"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "t:sections.information.blocks.item.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.information.blocks.item.settings.title.label"
+        },
+        {
+          "type": "textarea",
+          "id": "detail",
+          "label": "t:sections.information.blocks.item.settings.detail.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.information.blocks.item.settings.header__button.content"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.information.blocks.item.settings.button_text.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.information.blocks.item.settings.button_link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.information.presets.name"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,136 @@
+<style type="text/css">
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('{{ "AktivGrotesk-Light.eot" | asset_url }}');
+    src: url('{{ "AktivGrotesk-Light.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+        url('{{ "AktivGrotesk-Light.woff2" | asset_url }}') format('woff2'),
+        url('{{ "AktivGrotesk-Light.woff" | asset_url }}') format('woff'),
+        url('{{ "AktivGrotesk-Light.ttf" | asset_url }}') format('truetype'),
+        url('{{ "AktivGrotesk-Light.svg#AktivGrotesk-Light" | asset_url }}') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('{{ "AktivGrotesk-Regular.eot" | asset_url }}');
+    src: url('{{ "AktivGrotesk-Regular.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+        url('{{ "AktivGrotesk-Regular.woff2" | asset_url }}') format('woff2'),
+        url('{{ "AktivGrotesk-Regular.woff" | asset_url }}') format('woff'),
+        url('{{ "AktivGrotesk-Regular.ttf" | asset_url }}') format('truetype'),
+        url('{{ "AktivGrotesk-Regular.svg#AktivGrotesk-Regular" | asset_url }}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('{{ "AktivGrotesk-Bold.eot" | asset_url }}');
+    src: url('{{ "AktivGrotesk-Bold.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+        url('{{ "AktivGrotesk-Bold.woff2" | asset_url }}') format('woff2'),
+        url('{{ "AktivGrotesk-Bold.woff" | asset_url }}') format('woff'),
+        url('{{ "AktivGrotesk-Bold.ttf" | asset_url }}') format('truetype'),
+        url('{{ "AktivGrotesk-Bold.svg#AktivGrotesk-Bold" | asset_url }}') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-Light.eot" | asset_url }}');
+    src: local('Ivy Mode Light'), local('IvyMode-Light'),
+      url('{{ "IvyMode-Light.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-Light.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-Light.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-Light.ttf" | asset_url }}') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-LightItalic.eot" | asset_url }}');
+    src: local('Ivy Mode Light Italic'), local('IvyMode-LightItalic'),
+      url('{{ "IvyMode-LightItalic.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-LightItalic.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-LightItalic.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-LightItalic.ttf" | asset_url }}') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-Regular.eot" | asset_url }}');
+    src: local('Ivy Mode Regular'), local('IvyMode-Regular'),
+      url('{{ "IvyMode-Regular.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-Regular.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-Regular.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-Regular.ttf" | asset_url }}') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-Italic.eot" | asset_url }}');
+    src: local('Ivy Mode Italic'), local('IvyMode-Italic'),
+      url('{{ "IvyMode-Italic.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-Italic.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-Italic.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-Italic.ttf" | asset_url }}') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-SemiBold.eot" | asset_url }}');
+    src: local('Ivy Mode SemiBold'), local('IvyMode-SemiBold'),
+      url('{{ "IvyMode-SemiBold.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-SemiBold.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-SemiBold.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-SemiBold.ttf" | asset_url }}') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-SemiBoldItalic.eot" | asset_url }}');
+    src: local('Ivy Mode SemiBold Italic'), local('IvyMode-SemiBoldItalic'),
+      url('{{ "IvyMode-SemiBoldItalic.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-SemiBoldItalic.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-SemiBoldItalic.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-SemiBoldItalic.ttf" | asset_url }}') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-Bold.eot" | asset_url }}');
+    src: local('Ivy Mode Bold'), local('IvyMode-Bold'),
+      url('{{ "IvyMode-Bold.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-Bold.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-Bold.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-Bold.ttf" | asset_url }}') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'IvyMode';
+    src: url('{{ "IvyMode-BoldItalic.eot" | asset_url }}');
+    src: local('Ivy Mode Bold Italic'), local('IvyMode-BoldItalic'),
+      url('{{ "IvyMode-BoldItalic.eot?#iefix" | asset_url }}') format('embedded-opentype'),
+      url('{{ "IvyMode-BoldItalic.woff2" | asset_url }}') format('woff2'),
+      url('{{ "IvyMode-BoldItalic.woff" | asset_url }}') format('woff'),
+      url('{{ "IvyMode-BoldItalic.ttf" | asset_url }}') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+</style>

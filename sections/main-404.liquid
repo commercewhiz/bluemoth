@@ -1,0 +1,56 @@
+{%- liquid
+  echo 'section-404.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+-%}
+
+<script src="{{ 'component-previous-links-wrapper.js' | asset_url }}" type="module"></script>
+
+<div
+  class="main-nofound section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="main-nofound__inner container center flex aic jcc">
+    <div class="main-nofound__wrapper">
+      <h1 class="h3 h3-small">
+        {{- 'templates.404.title' | t -}}
+      </h1>
+
+      <previous-links-wrapper class="main-nofound__content">
+        {{- mod_section.subtitle -}}
+      </previous-links-wrapper>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.404.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:settings_schema.global.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:settings_schema.global.settings.color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings_schema.global.settings.background_color.label",
+      "default": "#F2F2F2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "t:sections.404.settings.subtitle.label"
+    }
+  ]
+}
+{% endschema %}

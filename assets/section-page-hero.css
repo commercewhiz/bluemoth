@@ -1,0 +1,6 @@
+
+
+.page-hero__overlay {
+  background-color: var(--section-overlay-color);
+  opacity: calc(var(--section-overlay-opacity) / 100);
+}

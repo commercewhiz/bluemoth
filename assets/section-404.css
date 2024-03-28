@@ -1,0 +1,12 @@
+.main-nofound__inner {
+  min-height: 50rem;
+}
+
+.main-nofound__content {
+  margin-top: 1rem;
+}
+
+.main-nofound__content a {
+  color: var(--color-blue);
+  text-decoration: none;
+}

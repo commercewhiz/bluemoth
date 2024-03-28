@@ -1,0 +1,228 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-text-banner.css'
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="text-banner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="text-banner__inner">
+    <div class="container">
+      <div
+        class="text-banner center
+          {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+            scroll-trigger animate--slide-in
+          {% endif %}
+        "
+      >
+        {%- if mod_section.heading != blank -%}
+          <h2 class="text-banner__title h3 text-banner__title--{{ mod_section.heading_style }}">
+            {{- mod_section.heading -}}
+          </h2>
+        {%- endif -%}
+
+        {%- if mod_section.content != blank -%}
+          <div class="text-banner__detail">
+            {{- mod_section.content | newline_to_br -}}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="text-banner__items left flex fdc jcb">
+            {%- for block in section.blocks -%}
+              {%- assign mod_block = block.settings -%}
+              <div
+                class="text-banner__item"
+                {{ block.shopify_attributes }}
+              >
+                {%- if mod_block.title != blank -%}
+                  <div class="text-banner__item-title text-bold utility1">
+                    {{ mod_block.title }}
+                  </div>
+                {%- endif -%}
+                {%- if mod_block.description != blank -%}
+                  <div class="text-banner__item-description">
+                    {{ mod_block.description }}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if mod_section.button_link != blank and mod_section.button_text != blank -%}
+          <div class="text-banner__actions">
+            <a
+              href="{{ mod_section.button_link }}"
+              class="text-banner__link link-with-icon button button--{{ mod_section.button_type }}"
+            >
+              <span class="text">{{- mod_section.button_text -}}</span>
+              {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.text-banner.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.image-with-text.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-banner.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.text-banner.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.text-banner.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.text-banner.settings.header__content.content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.text-banner.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "t:sections.text-banner.settings.heading_style.label",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.text-banner.settings.heading_style.options__1.label"
+        },
+        {
+          "value": "normal",
+          "label": "t:sections.text-banner.settings.heading_style.options__2.label"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "t:sections.text-banner.settings.content.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.text-banner.settings.header__button.content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.text-banner.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.text-banner.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "t:sections.text-banner.settings.button_type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.text-banner.settings.button_type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.text-banner.settings.button_type.options__2.label"
+        },
+        {
+          "value": "tertiary",
+          "label": "t:sections.text-banner.settings.button_type.options__3.label"
+        }
+      ],
+      "default": "tertiary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.text-banner.blocks.column.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.text-banner.blocks.column.settings.title.label"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "t:sections.text-banner.blocks.column.settings.description.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.text-banner.presets.name",
+      "settings": {
+        "enable_animation": true,
+        "color": "#000000",
+        "background_color": "#a5ccfb",
+        "heading": "Steps to <em><strong>get started<\/strong><\/em>",
+        "heading_style": "normal",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "button_type": "tertiary"
+      },
+      "blocks": [
+        {
+          "type": "column",
+          "settings": {
+            "title": "1. Customize your devices",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "2. Create an account",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "3. Upload your prescription",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "4. We’ll ship it!",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

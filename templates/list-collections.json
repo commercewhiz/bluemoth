@@ -1,0 +1,386 @@
+{
+  "sections": {
+    "50452952-5d58-4acf-9b55-e8b59f3adf75": {
+      "type": "featured-products",
+      "blocks": {
+        "2957f116-164c-4c3f-8420-a6a3edff1db6": {
+          "type": "product",
+          "settings": {
+            "product": "phonak-audeo™-lumity"
+          }
+        },
+        "dc76fc1e-b1da-4ff5-ae06-eedf12857631": {
+          "type": "product",
+          "settings": {
+            "product": "signa-charge-go-ax"
+          }
+        },
+        "e9e710e5-ccd3-45db-a15f-996b7d4adf3d": {
+          "type": "product",
+          "settings": {
+            "product": "widex-moment"
+          }
+        }
+      },
+      "block_order": [
+        "2957f116-164c-4c3f-8420-a6a3edff1db6",
+        "dc76fc1e-b1da-4ff5-ae06-eedf12857631",
+        "e9e710e5-ccd3-45db-a15f-996b7d4adf3d"
+      ],
+      "settings": {
+        "enable_animation": false,
+        "section_type": "primary",
+        "color": "#000000",
+        "background_color": "#f2f2f2",
+        "heading": "<p>Our <em><strong>Products<\/strong><\/em><\/p>",
+        "button_text": "Compare Devices",
+        "button_link": "shopify:\/\/collections"
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "d8afaa1b-0e43-4016-b86e-128bbb6c07d3": {
+      "type": "image-banner",
+      "settings": {
+        "enable_animation": true,
+        "width_type": "container",
+        "color": "#ffffff",
+        "background_color": "#f2f2f2",
+        "add_top_space": false,
+        "add_bottom_space": true,
+        "image": "shopify:\/\/shop_images\/image-banner-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/image-banner-mobile.png",
+        "add_border_round": true,
+        "enable_overlay": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 55,
+        "heading": "<p>Find the <em><strong>perfect device<\/strong><\/em> for you<\/p>",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n ut labore et dolore.",
+        "button_text": "Help Me Choose",
+        "button_link": "shopify:\/\/collections\/frontpage",
+        "button_type": "primary"
+      }
+    },
+    "19e141ce-4faf-49fa-ace3-53cd16353bda": {
+      "type": "image-with-text",
+      "blocks": {
+        "5c781168-137e-4ce6-83c1-bcd3c90d679d": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>We know a lot. But,<br\/>            <em><strong>you know you best.<\/strong><\/em><\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "View Experience Box",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "secondary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "0b58941b-20a6-4ca0-b184-31e8fe9f7221": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Collection-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "5c781168-137e-4ce6-83c1-bcd3c90d679d",
+        "0b58941b-20a6-4ca0-b184-31e8fe9f7221"
+      ],
+      "settings": {
+        "title": "",
+        "color": "",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": false,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "99748267-ad1d-4767-b4cf-91dbdd631e4a": {
+      "type": "text-banner",
+      "settings": {
+        "enable_animation": true,
+        "color": "#000000",
+        "background_color": "#d1d92e",
+        "heading": "<em><strong>Prescription<\/strong><\/em> information",
+        "heading_style": "normal",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\net dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "button_text": "Learn More",
+        "button_link": "shopify:\/\/pages\/prescriptions",
+        "button_type": "tertiary"
+      }
+    },
+    "2eb4fb73-a13f-424b-9332-a5bb776d4525": {
+      "type": "image-with-text",
+      "blocks": {
+        "21489a81-eb7a-4335-bcfc-7ec0e82a58b7": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Collection-6.png"
+          }
+        },
+        "0a388dbd-ec21-41cd-a044-de7f6c30c003": {
+          "type": "content",
+          "settings": {
+            "heading": "<p><em><strong>Tinnitus relief<\/strong><\/em> add-on<\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "Learn More",
+            "button_1_link": "shopify:\/\/collections\/frontpage",
+            "button_1_type": "primary",
+            "button_2_text": "More About Tinnitus",
+            "button_2_link": "shopify:\/\/collections\/frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "21489a81-eb7a-4335-bcfc-7ec0e82a58b7",
+        "0a388dbd-ec21-41cd-a044-de7f6c30c003"
+      ],
+      "settings": {
+        "title": "",
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": true,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "26e0608e-26a4-4c40-9d1f-abfe4c17aa1e": {
+      "type": "image-with-text",
+      "blocks": {
+        "82e7d1a9-0eb2-4e0c-bfec-81ef5919a8cd": {
+          "type": "content",
+          "settings": {
+            "heading": "<p>Many <em><strong>accessory options<\/strong><\/em><br\/>           available for all devices<\/p>",
+            "subheading": "<p>Lorem ipsum dolor sit amet consectetur adipiscingelit sed do eiusmod tempor incididunt labore et dolore magna aliqua nostrud exercitation.<\/p>",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_type": "primary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "568dfc11-cc8b-4243-9a9c-e163661ecefd": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Collection-3.png"
+          }
+        }
+      },
+      "block_order": [
+        "82e7d1a9-0eb2-4e0c-bfec-81ef5919a8cd",
+        "568dfc11-cc8b-4243-9a9c-e163661ecefd"
+      ],
+      "settings": {
+        "title": "",
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": false,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": true,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "3aa84100-f01b-49c1-85a4-7b8fadbf16eb": {
+      "type": "text-banner",
+      "blocks": {
+        "7347fc8f-08ef-4eac-a1d2-5c4ffb332fe4": {
+          "type": "column",
+          "settings": {
+            "title": "1. Customize your devices",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        "d38e9ecb-b2c1-4b6d-89d7-870f68e9d92c": {
+          "type": "column",
+          "settings": {
+            "title": "2. Create an account",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        "15358a46-5076-429f-97a9-d598deeae0d8": {
+          "type": "column",
+          "settings": {
+            "title": "3. Upload your prescription",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        },
+        "ee773545-b56a-4caf-9159-5b61f0bca5ba": {
+          "type": "column",
+          "settings": {
+            "title": "4. We’ll ship it!",
+            "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed \u2028do eiusmod tempor."
+          }
+        }
+      },
+      "block_order": [
+        "7347fc8f-08ef-4eac-a1d2-5c4ffb332fe4",
+        "d38e9ecb-b2c1-4b6d-89d7-870f68e9d92c",
+        "15358a46-5076-429f-97a9-d598deeae0d8",
+        "ee773545-b56a-4caf-9159-5b61f0bca5ba"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "color": "#000000",
+        "background_color": "#a5ccfb",
+        "heading": "Steps to <em><strong>get started<\/strong><\/em>",
+        "heading_style": "normal",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "button_type": "tertiary"
+      }
+    },
+    "43335550-43bd-418c-b677-046436c47322": {
+      "type": "image-with-text",
+      "blocks": {
+        "3e8308be-168c-46dc-82c5-d146d79b95a8": {
+          "type": "image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Collection-4.png"
+          }
+        },
+        "4014f108-0d31-484d-9e29-2b92dc2e992d": {
+          "type": "checklist",
+          "settings": {
+            "heading": "<p>What you get<\/p><p> \u2028            <em><strong>with BlueMoth.<\/strong><\/em><\/p>",
+            "content": "BLUEMOTH 100% Telehealth Audiology Team\nBLUEMOTH Ready-To-Help Customer Service\n3 year repair warranty\n3 year loss and damage warranty\n45 day trial period\n100% money back guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "3e8308be-168c-46dc-82c5-d146d79b95a8",
+        "4014f108-0d31-484d-9e29-2b92dc2e992d"
+      ],
+      "settings": {
+        "title": "",
+        "color": "#000000",
+        "background_color": "",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": true,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 20
+      }
+    },
+    "e3036eb2-43cf-40f4-9a0b-5fa041516b65": {
+      "type": "marquee",
+      "settings": {
+        "marquee_text": "Hear life, <em><strong>full frequency<\/strong><\/em>",
+        "marquee_repeat": true,
+        "marquee_interpunct": "•",
+        "marquee_animate": true,
+        "marquee_animate_speed": 40,
+        "marquee_scroll_direction": "rtl",
+        "marquee_background_color": "#ffffff",
+        "marquee_text_color": "#000000"
+      }
+    },
+    "efccfc44-5769-4203-83da-e3230a448f0d": {
+      "type": "image-with-text",
+      "blocks": {
+        "1ed6b937-2d5d-4245-938b-10655239fd93": {
+          "type": "stack_image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/Collection-7.png",
+            "heading": "<p>Hearing loss<\/p>",
+            "subheading": "We get it. “Prescription hearing tech” might feel like a big, scary thing. But we want to make it a no-brainer.",
+            "button_1_text": "Learn More",
+            "button_1_link": "shopify:\/\/collections",
+            "button_1_type": "primary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "4071e7da-bc2d-4f5b-a395-fdf160b35d73": {
+          "type": "stack_image",
+          "settings": {
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/hear-better-2.png",
+            "heading": "<p>Tinnitus relief<\/p>",
+            "subheading": "Although we are loud and proud sound advocates, we also appreciate the need for blissful quiet.",
+            "button_1_text": "Learn More",
+            "button_1_link": "shopify:\/\/collections\/frontpage",
+            "button_1_type": "primary",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1ed6b937-2d5d-4245-938b-10655239fd93",
+        "4071e7da-bc2d-4f5b-a395-fdf160b35d73"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "Hearing <em><strong>solutions <\/strong><\/em>tailored to you.",
+        "color": "#ffffff",
+        "background_color": "#000000",
+        "add_top_space": true,
+        "add_bottom_space": true,
+        "enable_animation": true,
+        "enable_stack_on_mobile": true,
+        "gap_space_mobile": 40,
+        "gap_space_desktop": 40
+      }
+    },
+    "6da72e3c-6e9c-4684-a246-94c0bf804d1a": {
+      "type": "hero",
+      "settings": {
+        "enable_animation": true,
+        "animation_type": "bottom",
+        "type": "secondary",
+        "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/bottom-hero-desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/bottom-hero-mobile.png",
+        "heading": "<p>Have <em><strong>questions?<\/strong><\/em><br\/>               We hear you.<\/p>",
+        "subheading": "Schedule a free 15-minute consultation with one of our hearing specialists to discuss your needs and talk through recommendations.",
+        "button_1_text": "Book Your FREE Consulation",
+        "button_1_link": "shopify:\/\/collections\/frontpage",
+        "button_1_type": "primary",
+        "button_2_text": "View FAQs",
+        "button_2_link": "shopify:\/\/collections\/frontpage",
+        "button_2_type": "primary"
+      }
+    }
+  },
+  "order": [
+    "50452952-5d58-4acf-9b55-e8b59f3adf75",
+    "main",
+    "d8afaa1b-0e43-4016-b86e-128bbb6c07d3",
+    "19e141ce-4faf-49fa-ace3-53cd16353bda",
+    "99748267-ad1d-4767-b4cf-91dbdd631e4a",
+    "2eb4fb73-a13f-424b-9332-a5bb776d4525",
+    "26e0608e-26a4-4c40-9d1f-abfe4c17aa1e",
+    "3aa84100-f01b-49c1-85a4-7b8fadbf16eb",
+    "43335550-43bd-418c-b677-046436c47322",
+    "e3036eb2-43cf-40f4-9a0b-5fa041516b65",
+    "efccfc44-5769-4203-83da-e3230a448f0d",
+    "6da72e3c-6e9c-4684-a246-94c0bf804d1a"
+  ]
+}

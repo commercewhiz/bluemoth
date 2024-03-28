@@ -1,0 +1,15 @@
+.faq-section__content {
+  width: 100%;
+  max-width: 88rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-items {
+  width: 100%;
+  max-width: 73.5rem;
+}
+
+.faq-items .faq-item:first-child {
+  border-top: 0;
+}

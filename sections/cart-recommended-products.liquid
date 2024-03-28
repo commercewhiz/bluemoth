@@ -1,0 +1,40 @@
+{%- liquid
+  assign cart_skus = cart.items | map: 'sku'
+  assign all_cart_ids = cart.items | map: 'product_id'
+-%}
+
+{%- paginate collections.all.products by 1000 -%}
+  {%- liquid
+    capture products_content
+      for product in collections.all.products
+        assign show_product = false
+
+        unless all_cart_ids contains product.id
+          for cart_sku in cart_skus
+            assign accessory_tag = 'accessory-' | append: cart_sku
+
+            if product.tags contains accessory_tag
+              assign show_product = true
+            endif
+          endfor
+        endunless
+
+        if show_product
+          render 'product-card', mod_product: product, class: 'swiper-slide'
+        endif
+      endfor
+    endcapture
+  -%}
+
+  {%- if products_content != blank -%}
+    <div data-render-products>
+      <div class="recommended-products__carousel swiper block">
+        <div class="js-slider">
+          <div class="swiper-wrapper product-grid flex">
+            {{ products_content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endpaginate -%}

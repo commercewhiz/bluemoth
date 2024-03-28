@@ -1,0 +1,89 @@
+.contact-sidebar__content strong {
+  font-weight: 600;
+}
+
+.contact-sidebar__content p,
+.contact-banner__title p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.contact-sidebar__content a,
+.contact-sidebar__content a:hover,
+.contact-sidebar__content a:focus {
+  color: var(--section-text-color, var(--color-black));
+  text-decoration: none;
+}
+
+.contact-sidebar__content p:empty {
+  display: block;
+  height: 3rem;
+}
+
+.contact-banner {
+  margin-top: 7rem;
+  margin-bottom: 5.5rem;
+}
+
+.contact-banner__image .img {
+  height: 100%;
+}
+
+.contact-banner__overlay {
+  opacity: 0.6;
+  border-radius: 1rem;
+}
+
+.contact-banner__inner {
+  padding: 1rem 1rem 2rem;
+}
+
+.contact-banner__content {
+  margin-top: 2rem;
+}
+
+.contact-banner__actions {
+  margin-top: 2.5rem;
+}
+
+.contact-content {
+  margin-top: 5.5rem;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .contact-banner__inner {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .contact-sidebar__content {
+    text-align: left;
+  }
+
+  .contact-banner {
+    max-width: 30rem;
+    margin-top: 6rem;
+    margin-bottom: 0;
+  }
+
+  .contact-banner__inner {
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .contact-banner__actions {
+    margin-top: 3rem;
+  }
+
+  .contact-content {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+
+  .contact-inner {
+    padding-bottom: 9rem;
+  }
+}

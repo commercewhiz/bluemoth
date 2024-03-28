@@ -1,0 +1,281 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{%- liquid
+  assign mod_section = section.settings
+  echo 'section-footer.css' | asset_url | stylesheet_tag
+  echo 'component-newsletter.css' | asset_url | stylesheet_tag
+  echo 'component-list-menu.css' | asset_url | stylesheet_tag
+-%}
+
+<footer class="footer color-{{ mod_section.color_scheme }} section-{{ section.id }}-padding">
+  {%- liquid
+    assign has_social_icons = true
+    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank and settings.social_linkedin_link == blank
+      assign has_social_icons = false
+    endif
+  -%}
+  {%- if section.blocks.size > 0
+    or mod_section.newsletter_enable
+    or mod_section.show_social and has_social_icons == true
+  -%}
+
+    <div class="footer__content-top container">
+      {%- if section.blocks.size > 0 -%}
+        <div
+          class="footer__blocks-wrapper mxa{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}
+        >
+          <div class="footer-left">
+            <a href="/" class="footer-logo inline-block c-white" aria-label="{{ 'sections.footer.logo_label' | t }}">
+              {%- render 'footer-logo', class: 'block w1 ha' -%}
+            </a>
+            <div
+              class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+              {% endif %}
+            >
+              {%- if mod_section.newsletter_enable -%}
+                <div class="footer-block__newsletter">
+                  {%- if mod_section.newsletter_heading != blank -%}
+                    <h2 class="footer-block__heading h3">{{ mod_section.newsletter_heading }}</h2>
+                  {%- endif -%}
+                  {%- if mod_section.newsletter_subheading != blank -%}
+                    <p class="footer-block__heading">{{ mod_section.newsletter_subheading }}</p>
+                  {%- endif -%}
+                  {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <div class="newsletter-form__field-wrapper">
+                      <div class="field c-white">
+                        <input
+                          id="NewsletterForm--{{ section.id }}"
+                          type="email"
+                          name="contact[email]"
+                          class="field__input"
+                          value="{{ form.email }}"
+                          aria-required="true"
+                          autocorrect="off"
+                          autocapitalize="off"
+                          autocomplete="email"
+                          {% if form.errors %}
+                            autofocus
+                            aria-invalid="true"
+                            aria-describedby="ContactFooter-error"
+                          {% elsif form.posted_successfully? %}
+                            aria-describedby="ContactFooter-success"
+                          {% endif %}
+                          placeholder="{{ 'newsletter.label' | t }}"
+                          required
+                        >
+                        <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                          {{ 'newsletter.label' | t }}
+                        </label>
+                        <button
+                          type="submit"
+                          class="newsletter-form__button field__button c-black"
+                          name="commit"
+                          id="Subscribe"
+                          aria-label="{{ 'newsletter.button_label' | t }}"
+                        >
+                          {% render 'icon-arrow' %}
+                        </button>
+                      </div>
+                      {%- if form.errors -%}
+                        <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                          {%- render 'icon-error' -%}
+                          {{- form.errors.translated_fields.email | capitalize }}
+                          {{ form.errors.messages.email -}}
+                        </small>
+                      {%- endif -%}
+                    </div>
+                    {%- if form.posted_successfully? -%}
+                      <h3
+                        class="newsletter-form__message newsletter-form__message--success form__message"
+                        id="ContactFooter-success"
+                        tabindex="-1"
+                      >
+                        {% render 'icon-success' -%}
+                        {{- 'newsletter.success' | t }}
+                      </h3>
+                    {%- endif -%}
+                  {%- endform -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="footer-blocks flex fw jcb">
+            {%- for block in section.blocks -%}
+              <div
+                class="footer-block {% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {%- if block.settings.heading != blank -%}
+                  <p class="footer-block__heading c-grey-3 mx0 text-bold">{{- block.settings.heading -}}</p>
+                {%- endif -%}
+
+                {%- case block.type -%}
+                  {%- when 'link_list' -%}
+                    {%- if block.settings.menu != blank -%}
+                      <ul class="footer-block__details-content list-unstyled">
+                        {%- for link in block.settings.menu.links -%}
+                          <li>
+                            <a
+                              href="{{ link.url }}"
+                              class="link list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                            >
+                              {{ link.title }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                {%- endcase -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+  {%- endif -%}
+
+  <div class="footer__content-bottom">
+    <div class="footer__content-bottom-wrapper container">
+      {%- if mod_section.show_social and has_social_icons -%}
+        {%- render 'social-icons', class: 'footer__list-social' -%}
+      {%- endif -%}
+      {%- if shop.enabled_payment_types != blank -%}
+        <div class="footer__column">
+          {%- if mod_section.payment_enable -%}
+            <div class="footer__payment">
+              <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+              <ul class="list list-payment" role="list">
+                {%- for type in shop.enabled_payment_types -%}
+                  <li class="list-payment__item">
+                    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      <div class="content-divider mxa">&nbsp;</div>
+      <div class="footer__content-bottom__low flex fdc jcb center small">
+        <div class="footer__content-copyright">
+          {%- liquid
+            assign year = 'now' | date: '%Y'
+            echo 'sections.footer.copyright' | t: year: year
+          -%}
+        </div>
+
+        <ul class="footer__content-terms flex aic jcc list c-white mx0" role="list">
+          <li>
+            <a href="/pages/privacy" class="link">
+              Privacy Policy
+            </a>
+          </li>
+          <li class="gap bg-white"></li>
+          <li>
+            <a href="/pages/terms" class="link">
+              Terms & Conditions
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "class": "bg-black c-white",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_heading",
+      "default": "Hear the latest news",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor",
+      "label": "t:sections.footer.settings.newsletter_subheading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      }
+    ]
+  }
+}
+{% endschema %}

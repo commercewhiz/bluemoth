@@ -1,0 +1,53 @@
+{%- liquid
+  assign mod_text = mod_text | default: blank
+  assign mod_outline = mod_outline | default: false
+  assign mod_repeat = mod_repeat | default: false
+  assign mod_animate = mod_animate | default: false
+  assign mod_animate_speed = mod_animate_speed | default: 40
+  assign mod_scroll_direction = mod_scroll_direction | default: 'rtl'
+  assign mod_interpunct = mod_interpunct | default: ''
+  assign mod_text_color = mod_text_color | default: 'black'
+  assign mod_bg_color = mod_bg_color | default: 'white'
+  assign mod_repeat_inner = mod_repeat_inner | default: 1
+
+  render 'async-stylesheet', mod_url: 'component-ticker.css'
+-%}
+
+<script src="{{ 'component-ticker.js' | asset_url }}" defer="defer"></script>
+
+<style>
+  .ticker {
+    --text-color: {{ mod_text_color }};
+    --bg-color: {{ mod_bg_color }};
+    --animate-speed: {{ mod_animate_speed }}s;
+  }
+</style>
+
+<ticker-element class="ticker ticker__{{ mod_scroll_direction }}{% unless mod_animate %} ticker__disabled{% endunless %}">
+  <h1 class="ticker__content-for-screen-reader visually-hidden">{{ mod_text }}</h1>
+
+  <div class="ticker__container js-container" role="presentation">
+    <div class="ticker__content {% if mod_outline %}ticker__content--outline{% endif %} js-content">
+      {%- liquid
+        assign repeat_number = 1
+        if mod_repeat
+          assign repeat_number = 5
+        endif
+      -%}
+
+      {%- for i in (1..repeat_number) -%}
+        <div class="ticker__content__item{% if forloop.index == 2 %} second{% endif %}{% if mod_interpunct != blank %} has-interpunct{% endif %}">
+          {%- for i in (1..mod_repeat_inner) -%}
+            <span class="h1">
+              {{- mod_text -}}
+
+              {%- if mod_repeat and mod_interpunct != blank -%}
+                <span class="interpunct c-lemon">{{ mod_interpunct }}</span>
+              {%- endif -%}
+            </span>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</ticker-element>

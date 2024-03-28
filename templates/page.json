@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color": "#000000",
+        "background_color": "#F2F2F2",
+        "title": "",
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "padding_top_mobile": 34,
+        "padding_bottom_mobile": 74
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

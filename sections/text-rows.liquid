@@ -1,0 +1,180 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-text-rows.css'
+  assign mod_section = section.settings
+-%}
+
+<div
+  class="text-rows section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="container">
+    <div class="text-rows__inner">
+      <div class="text-rows__head flex fdc">
+        {%- if mod_section.title != blank -%}
+          <div
+            class="text-rows__title h3 h3-large text-pre
+              {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                scroll-trigger animate--slide-in
+              {% endif %}
+            "
+          >
+            {{- mod_section.title | newline_to_br -}}
+          </div>
+        {%- endif -%}
+        {%- if mod_section.title != blank -%}
+          <div
+            class="text-rows__detail
+              {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                scroll-trigger animate--slide-in
+              {% endif %}
+            "
+            {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+              data-cascade
+              style="--animation-order: 2;"
+            {% endif %}
+          >
+            {{ mod_section.content }}
+          </div>
+        {%- endif -%}
+      </div>
+      {%- if section.blocks != blank -%}
+        <div class="text-rows__content">
+          {%- for block in section.blocks -%}
+            {%- assign mod_block = block.settings -%}
+            <div
+              class="row-item
+                {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                  scroll-trigger animate--slide-in
+                {% endif %}
+              "
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                data-cascade
+                style="--animation-order: {{ forloop.index | plus: 4 }};"
+              {% endif %}
+            >
+              <div class="row-item__inner flex fdc">
+                {%- if mod_block.title != blank -%}
+                  <div class="row-item__title h1 h1-small">
+                    {{ mod_block.title }}
+                  </div>
+                {%- endif -%}
+                {%- if mod_block.description != blank -%}
+                  <div class="row-item__detail utility1">
+                    {{ mod_block.description }}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.text-rows.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.text-rows.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.text-rows.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.text-rows.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.text-rows.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.text-rows.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:sections.text-rows.settings.title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "t:sections.text-rows.settings.content.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "t:sections.text-rows.blocks.row.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.text-rows.blocks.row.settings.title.label"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "t:sections.text-rows.blocks.row.settings.description.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.text-rows.presets.name",
+      "settings": {
+        "enable_animation": true,
+        "color": "#fff",
+        "background_color": "#000000",
+        "title": "<p>A simple mission<br\/>            of <em><strong>better hearing<\/strong><\/em><\/p>",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "title": "500,000+",
+            "description": "Hearing devices sold"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "20+ Years",
+            "description": "Experience"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "1,000",
+            "description": "Stat detail"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "title": "17",
+            "description": "Stat detail"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

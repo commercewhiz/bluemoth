@@ -1,0 +1,36 @@
+.pagination {
+  padding-top: 3rem;
+}
+
+.pagination__list {
+  gap: 2rem;
+}
+
+.pagination__item {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.pagination__item--current {
+  font-weight: 700;
+}
+
+.pagination__item--prev {
+  margin-right: 2rem;
+}
+
+.pagination__item--next {
+  transform: rotate(180deg);
+  margin-left: 2rem;
+}
+
+.pagination__item-arrow[disabled] {
+  user-select: none;
+  pointer-events: none;
+}
+
+.pagination__item-arrow svg {
+  display: block;
+  height: auto;
+  width: 1.8rem;
+}

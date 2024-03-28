@@ -1,0 +1,145 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'section-featured-products.css'
+  assign mod_section = section.settings
+-%}
+
+<script src="{{ 'component-card-carousel.js' | asset_url }}" type="module" defer></script>
+
+<div
+  class="featured-products featured-products--{{ mod_section.section_type }}"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+  "
+>
+  <div class="container">
+    <div
+      class="featured-products__inner
+        {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+          scroll-trigger animate--slide-in
+        {% endif %}
+      "
+    >
+      <div class="featured-products__heading flex fdc jcb">
+        {%- if mod_section.heading != blank -%}
+          <h2 class="featured-products__title h3 featured-products__title--{{ mod_section.heading_style }}">
+            {{- mod_section.heading -}}
+          </h2>
+        {%- endif -%}
+
+        {%- if mod_section.button_link != blank and mod_section.button_text != blank -%}
+          <div class="featured-products__actions">
+            <a
+              href="{{ mod_section.button_link }}"
+              class="featured-products__link link-with-icon button button--tertiary"
+            >
+              <span class="text">{{- mod_section.button_text -}}</span>
+              {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <card-carousel class="swiper block" data-breakpoint="(max-width: 750px)">
+          <div class="js-slider">
+            <div class="swiper-wrapper product-grid flex">
+              {%- for block in section.blocks -%}
+                {%- if block.settings.product != blank -%}
+                  {%- render 'product-card', mod_product: block.settings.product, class: 'swiper-slide' -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </card-carousel>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-products.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.image-with-text.settings.enable_animation.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-products.settings.header__style.content"
+    },
+    {
+      "type": "select",
+      "id": "section_type",
+      "label": "t:sections.featured-products.settings.section_type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.featured-products.settings.section_type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.featured-products.settings.section_type.options__2.label"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.featured-products.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.featured-products.settings.background_color.label",
+      "default": "#F2F2F2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-products.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:sections.featured-products.settings.heading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-products.settings.header__button.content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.featured-products.settings.button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.featured-products.settings.button_link.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "t:sections.featured-products.blocks.product.name",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.featured-products.blocks.product.settings.product.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-products.presets.name"
+    }
+  ]
+}
+{% endschema %}

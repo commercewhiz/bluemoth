@@ -1,0 +1,161 @@
+{%- liquid
+  echo 'section-main-faq.css' | asset_url | stylesheet_tag
+  echo 'component-accordion.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+-%}
+
+<script src="{{ 'component-animated-details.js' | asset_url }}" type="module"></script>
+<script src="{{ 'component-scroll-wrapper.js' | asset_url }}" type="module"></script>
+
+<div
+  class="main-faq section-inner"
+  style="
+    --section-text-color: {{ mod_section.color }};
+    --section-background-color: {{ mod_section.background_color }};
+    --section-sidebar-color: {{ mod_section.sidebar_color }};
+  "
+>
+  <div class="container">
+    <div class="main-faq__inner">
+      <scroll-wrapper class="page-wrapper">
+        <div class="page-sidebar page-sidebar--sticky">
+          <div class="page-sidebar__title small-hide">
+            {{ mod_section.sidebar_title }}
+          </div>
+          <div class="main-faq__navigation">
+            <div class="faq-navigation__select select medium-hide large-up-hide">
+              <select
+                class="select__select caption-large js-scroll-trigger-select"
+                id="FilterBy"
+                aria-describedby="a11y-refresh-page-message"
+              >
+                <option value="none">
+                  {{ mod_section.sidebar_title }}
+                </option>
+                  {%- for block in section.blocks -%}
+                    {%- if block.type == 'group' -%}
+                      {%- assign mod_block = block.settings -%}
+                      <option value="FaqGroup-{{ block.id }}-{{ section.id }}">
+                        {{- mod_block.title | escape -}}
+                      </option>
+                    {%- endif -%}
+                  {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+            <div class="faq-navigation__links small-hide">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'group' -%}
+                  {%- assign mod_block = block.settings -%}
+                  <button
+                    class="button button--tertiary faq-navigation__link js-scroll-trigger-link"
+                    data-index="FaqGroup-{{ block.id }}-{{ section.id }}"
+                  >
+                    {{- mod_block.title -}}
+                  </button>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+        <div class="page-content main-faq__content js-items">
+          {%- for block in section.blocks -%}
+            {%- assign mod_block = block.settings -%}
+            {%- case block.type -%}
+              {%- when 'group' -%}
+                <h2
+                  class="h3-small-mobile faq-group__title js-scroll-target"
+                  data-index="FaqGroup-{{ block.id }}-{{ section.id }}"
+                >
+                  {{ mod_block.title }}
+                </h2>
+              {%- when 'text' -%}
+                <animated-details class="faq-item accordion block js-animated-details" {{ block.shopify_attributes }}>
+                  <details id="Details-{{ block.id }}-{{ section.id }}">
+                    <summary>
+                      <div class="summary__title">
+                        <h3 class="p text-body mx0 bold">
+                          {{- mod_block.title -}}
+                        </h3>
+                      </div>
+                      <span class="icon">
+                        <span class="icon-open">
+                          {%- render 'icon' with 'plus', class: 'block w1 ha' -%}
+                        </span>
+                      </span>
+                    </summary>
+                    <div class="accordion__content rte faq-item__content" id="FaqAccordion-{{ block.id }}-{{ section.id }}">
+                      {{ mod_block.content }}
+                    </div>
+                  </details>
+                </animated-details>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </scroll-wrapper>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-faq.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-faq.settings.header__style.content"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.main-faq.settings.color.label"
+    },
+    {
+      "type": "color",
+      "id": "sidebar_color",
+      "label": "t:sections.main-faq.settings.sidebar_color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.main-faq.settings.background_color.label"
+    },
+    {
+      "type": "text",
+      "id": "sidebar_title",
+      "label": "t:sections.main-faq.settings.sidebar_title.label",
+      "default": "How can we help?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "t:sections.main-faq.blocks.group.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.main-faq.blocks.group.settings.title.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.main-faq.blocks.item.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.main-faq.blocks.item.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:sections.main-faq.blocks.item.settings.content.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

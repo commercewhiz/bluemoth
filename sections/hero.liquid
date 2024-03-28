@@ -1,0 +1,257 @@
+{%- liquid
+  echo 'section-hero.css' | asset_url | stylesheet_tag
+  assign mod_section = section.settings
+
+  assign desktop_image_class = ''
+  if mod_section.mobile_image != blank
+    assign desktop_image_class = 'small-hide'
+  endif
+
+  assign disable_lazy_image = false
+  if mod_section.type == 'primary'
+    assign disable_lazy_image = true
+  endif
+-%}
+
+<div
+  class="hero hero--{{ mod_section.type }}"
+  style="
+    --section-text-color: {{ mod_section.color }};
+  "
+>
+  <div class="hero-inner relative">
+    <div class="hero-image
+      {% if settings.animations_reveal_on_scroll and mod_section.enable_animation and mod_section.animation_type == 'top' %}
+        scroll-trigger animate--slide-down
+      {% endif %}"
+    >
+      {%- if mod_section.mobile_image != blank -%}
+        {%- render 'image',
+          image: mod_section.mobile_image,
+          sizes: '100vw',
+          container: true,
+          disable_lazy: disable_lazy_image,
+          container_class: 'medium-hide large-up-hide'
+        -%}
+      {%- endif -%}
+
+      {%- if mod_section.image != blank -%}
+        {%- render 'image',
+          image: mod_section.image,
+          sizes: '100vw',
+          container: true,
+          disable_lazy: disable_lazy_image,
+          container_class: desktop_image_class
+        -%}
+      {%- endif -%}
+    </div>
+    <div class="hero-content fill">
+      <div class="container full-height">
+        <div class="hero-content__wrapper full-height flex aie jcs">
+          <div class="hero-content__inner">
+            {%- if mod_section.heading != blank -%}
+              <h2 class="hero-title text-pre
+                {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                  scroll-trigger
+                  {% case mod_section.animation_type %}
+                    {% when 'top' %}
+                      animate--slide-down-long
+                    {% when 'bottom' %}
+                      animate--slide-in
+                  {% endcase %}
+                {% endif %}
+              ">
+                {{- mod_section.heading | newline_to_br -}}
+              </h2>
+            {%- endif -%}
+            {%- if mod_section.subheading != blank -%}
+              <div class="hero-subtitle utility2 text-light
+                {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+                  scroll-trigger
+                  {% case mod_section.animation_type %}
+                    {% when 'top' %}
+                      animate--slide-down
+                    {% when 'bottom' %}
+                      animate--slide-in
+                  {% endcase %}
+                {% endif %}
+              ">
+                {{- mod_section.subheading -}}
+              </div>
+            {%- endif -%}
+            <div class="hero-actions flex fw aic">
+              {%- if mod_section.button_1_link != blank and mod_section.button_1_text != blank -%}
+                <a
+                  href="{{ mod_section.button_1_link }}"
+                  class="hero-link link-with-icon button button--{{ mod_section.button_1_type }}"
+                >
+                  <span class="text">{{- mod_section.button_1_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+
+              {%- if mod_section.button_2_link != blank and mod_section.button_2_text != blank -%}
+                <a
+                  href="{{ mod_section.button_2_link }}"
+                  class="hero-link link-with-icon button button--tertiary button--tertiary__{{ mod_section.button_2_type }}"
+                >
+                  <span class="text">{{- mod_section.button_2_text -}}</span>
+                  {%- render 'icon-arrow-top-right', class: 'block w1 ha' -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.hero.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__style.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "t:sections.hero.settings.enable_animation.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "animation_type",
+      "label": "t:settings_schema.global.settings.animation_type.label",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:settings_schema.global.settings.animation_type.options__1.label"
+        },
+        {
+          "value": "bottom",
+          "label": "t:settings_schema.global.settings.animation_type.options__2.label"
+        }
+      ],
+      "default": "bottom"
+    },{
+      "type": "select",
+      "id": "type",
+      "label": "t:sections.hero.settings.type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.hero.settings.type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.hero.settings.type.options__2.label"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.hero.settings.color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__image.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.hero.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.hero.settings.mobile_image.label",
+      "info": "t:sections.hero.settings.mobile_image.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__content.content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:sections.hero.settings.heading.label"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "t:sections.hero.settings.subheading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__button_1.content"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "t:sections.hero.settings.button_1_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "t:sections.hero.settings.button_1_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_1_type",
+      "label": "t:sections.hero.settings.button_1_type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.hero.settings.button_1_type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.hero.settings.button_1_type.options__2.label"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__button_2.content"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "t:sections.hero.settings.button_2_text.label"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "t:sections.hero.settings.button_2_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_2_type",
+      "label": "t:sections.hero.settings.button_2_type.label",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.hero.settings.button_2_type.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.hero.settings.button_2_type.options__2.label"
+        }
+      ],
+      "default": "primary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hero.presets.name"
+    }
+  ]
+}
+{% endschema %}

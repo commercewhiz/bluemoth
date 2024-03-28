@@ -1,0 +1,142 @@
+{%- liquid
+  render 'async-stylesheet', mod_url: 'component-recommended-products.css'
+  assign mod_section = section.settings
+
+  assign show_section = true
+  if mod_section.show_on_filled_cart and cart == empty
+    assign show_section = false
+  endif
+-%}
+
+{%- if show_section -%}
+  <script src="{{ 'component-recommended-products.js' | asset_url }}" type="module" defer="defer"></script>
+
+  {%- liquid
+    assign products_array = mod_section.fallback_collection.products
+    if recommendations.performed? and recommendations.products_count > 0
+      assign products_array = recommendations.products
+    endif
+    assign cart_product_ids = cart.items | map: 'product_id'
+  -%}
+
+  <product-recommendations
+    class="section-inner product-recommendations block loading"
+    data-url="/cart?view=recommended-products"
+    data-recommended-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ cart.items[0].product.id }}&limit=20&intent=related"
+    style="
+      --section-text-color: {{ mod_section.color }};
+      --section-background-color: {{ mod_section.background_color }};
+    "
+    data-render
+    {% if settings.animations_reveal_on_scroll and mod_section.enable_animation %}
+      scroll-trigger animate--slide-in
+    {% endif %}
+  >
+    <div class="container">
+      <div class="product-recommendations__inner">
+        <div class="product-recommendations__heading flex jcb">
+          {%- if mod_section.heading != blank -%}
+            <h2 class="product-recommendations__title h3 h3-small">
+              {{- mod_section.heading -}}
+            </h2>
+          {%- endif -%}
+
+          <div class="slider-arrows flex ais small-hide">
+            <button class="slider-arrow slider-arrow__left button button--primary js-slider-prev">
+              {%- render 'icon-arrow-top-right', type: 'rounded', class: 'block w1 ha' -%}
+            </button>
+            <button class="slider-arrow slider-arrow__right button button--primary js-slider-next">
+              {%- render 'icon-arrow-top-right', type: 'rounded', class: 'block w1 ha' -%}
+            </button>
+          </div>
+        </div>
+
+        <div class="container-inner__left recommended-products__content" data-render-products>
+          {%- if products_array.size > 0 -%}
+            <div class="recommended-products__carousel swiper block">
+              <div class="js-slider">
+                <div class="swiper-wrapper product-grid flex">
+                  {%- liquid
+                    for product_item in products_array
+                      unless cart_product_ids contains product_item.id
+                        render 'product-card', mod_product: product_item, class: 'swiper-slide'
+                      endunless
+                    endfor
+                  -%}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+          <div class="recommended-products__placeholder block overflow-hidden">
+            <div class="flex product-grid">
+              {%- render 'product-card-placeholder' -%}
+              {%- render 'product-card-placeholder' -%}
+              {%- render 'product-card-placeholder' -%}
+              {%- render 'product-card-placeholder' -%}
+              {%- render 'product-card-placeholder' -%}
+              {%- render 'product-card-placeholder' -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </product-recommendations>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "t:sections.recommended-products.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_on_filled_cart",
+        "label": "t:sections.recommended-products.settings.show_on_filled_cart.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_animation",
+        "label": "t:sections.recommended-products.settings.enable_animation.label",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:sections.recommended-products.settings.header__style.content"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "t:sections.recommended-products.settings.color.label"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "t:sections.recommended-products.settings.background_color.label",
+        "default": "#F2F2F2"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.recommended-products.settings.header__heading.content"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "label": "t:sections.recommended-products.settings.heading.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.recommended-products.settings.header__content.content"
+      },
+      {
+        "type": "collection",
+        "id": "fallback_collection",
+        "label": "t:sections.recommended-products.settings.fallback_collection.label"
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.recommended-products.presets.name"
+      }
+    ]
+  }
+{% endschema %}
