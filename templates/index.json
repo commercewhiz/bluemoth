@@ -174,7 +174,8 @@
         "9665d160-47d9-49a6-b5f5-df1337b3f316": {
           "type": "image",
           "settings": {
-            "add_border_round": true
+            "add_border_round": true,
+            "image": "shopify:\/\/shop_images\/photographer-working-at-his-desk.jpg"
           }
         }
       },
@@ -342,6 +343,7 @@
         "animation_type": "bottom",
         "type": "secondary",
         "color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/shop-local.jpg",
         "heading": "<p>Have <em><strong>questions?<\/strong><\/em><br\/>            We hear you.<\/p>",
         "subheading": "Schedule a free 15-minute consultation with one of our hearing specialists to discuss your needs and talk through recommendations.",
         "button_1_text": "Book Your FREE Consulation",
