@@ -11,19 +11,10 @@
             "text": "Free shipping on all orders.",
             "link": ""
           }
-        },
-        "88593c4c-b149-404c-90c5-b7ebb05dfe40": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "88593c4c-b149-404c-90c5-b7ebb05dfe40"
+        "announcement-bar-0"
       ],
       "settings": {
         "color_scheme": "inverse",
@@ -101,8 +92,8 @@
         "logo_position": "middle-center",
         "menu": "main-menu",
         "right_menu": "",
-        "menu_type_desktop": "mega",
-        "sticky_header_type": "always",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "none",
         "menu_color_scheme": "background-1",
         "enable_country_selector": false,
         "enable_language_selector": false,
